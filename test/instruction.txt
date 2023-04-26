@@ -1,0 +1,379 @@
+# requirements
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple retrying
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pymysql
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask
+
+# mysql
+https://www.myfreax.com/how-to-install-mysql-on-ubuntu-20-04/
+
+setup on aws linux
+wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.33-1.el9.x86_64.rpm-bundle.tar
+tar -xvf mysql-8.0.33-1.el9.x86_64.rpm-bundle.tar
+rpm -ivh mysql-community-common-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-libs-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-client-plugins-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-libs-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-client-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-server-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-icu-data-files-8.0.33-1.el9.x86_64.rpm
+rpm -ivh mysql-community-server-8.0.33-1.el9.x86_64.rpm
+
+
+create database compare_tools;
+
+CREATE TABLE inconsistent_record (
+id bigint(20) NOT NULL AUTO_INCREMENT,
+project  text CHARACTER SET utf8 NOT NULL,
+query text CHARACTER SET utf8 NOT NULL,
+gluten_result text CHARACTER SET utf8 NOT NULL,
+normal_result text CHARACTER SET utf8 NOT NULL,
+tag text CHARACTER SET utf8 NOT NULL,
+createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE response_time (
+id bigint(20) NOT NULL AUTO_INCREMENT,
+project  text CHARACTER SET utf8 NOT NULL,
+query text CHARACTER SET utf8 NOT NULL,
+gluten_res_time bigint,
+normal_res_time bigint,
+createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE error_category (
+id bigint(20) NOT NULL AUTO_INCREMENT,
+keywords  text CHARACTER SET utf8 NOT NULL,
+tag text CHARACTER SET utf8 NOT NULL,
+status text CHARACTER SET utf8 NOT NULL,
+createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+);
+
+insert into error_category(keywords,tag,status)
+values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
+(': Object,not found', 'sql_object_not_found', 'unsolved'),
+('s3: //,[OBJECT STORAGE Exception] Input path does not exist', 's3_path_not_found', 'unsolved'),
+('[OBJECT STORAGE Exception],com.amazonaws.services.s3.model.AmazonS3Exception: Forbidden (Service: Amazon S3', 's3_access_forbidden', 'unsolved'),
+('KE-010001201: Can\'t find project', 'project_not_found', 'unsolved'),
+('[OBJECT STORAGE Exception] : Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Service: AWSSecurityTokenService,Error Code: AccessDenied', 'aws_access_denied', 'unsolved');
+
+
+/etc/my.cnf
+[mysqld]
+skip-grant-tables
+bind-address = 0.0.0.0
+
+update user set authentication_string = '' where user = 'root';
+ALTER USER USER() IDENTIFIED BY 'lHuang0928_7750';
+
+# start compare service
+python3 main.py
+
+
+
+# zen real
+./gor --input-file zen_multi_real.gor --output-http="http://127.0.0.1:5000"
+
+# happy path
+SELECT   * FROM (select sum($f13) "Total Sales"
+from (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13    from DEFAULT_WV8L1AC8.retail_stores_by_transaction) t) AS "1682056877916"
+LIMIT 500
+sudo ./gor --input-raw :8194 --output-file   has_rows_consistent.gor
+./gor --input-file has_rows_consistent.gor --output-http="http://127.0.0.1:5000"
+
+{
+  "code": "000",
+  "data": {
+    "columnMetas": [
+      {
+        "isNullable": 1,
+        "displaySize": 2147483647,
+        "label": "Total Sales",
+        "name": "Total Sales",
+        "schemaName": null,
+        "catelogName": null,
+        "tableName": null,
+        "precision": 0,
+        "scale": 0,
+        "columnType": 8,
+        "columnTypeName": "DOUBLE",
+        "autoIncrement": false,
+        "searchable": false,
+        "currency": false,
+        "definitelyWritable": false,
+        "caseSensitive": false,
+        "readOnly": false,
+        "signed": true,
+        "writable": false
+      }
+    ],
+    "results": [
+      [
+        "3.467849158328247E7"
+      ]
+    ],
+    "affectedRowCount": 0,
+    "exceptionMessage": null,
+    "duration": 11493,
+    "scanRows": [
+      9994
+    ],
+    "scanBytes": [
+      1633816
+    ],
+    "failTimes": -1,
+    "resultRowCount": 1,
+    "shufflePartitions": 1,
+    "hitExceptionCache": false,
+    "storageCacheUsed": false,
+    "storageCacheType": null,
+    "queryStatistics": null,
+    "queryId": "f27f53ae-5534-f97d-7e3b-9cd490f47728",
+    "server": "10.198.32.78:8194",
+    "signature": null,
+    "engineType": "HIVE",
+    "traces": [
+      {
+        "name": "HTTP_RECEPTION",
+        "group": null,
+        "duration": 2
+      },
+      {
+        "name": "GET_ACL_INFO",
+        "group": "PREPARATION",
+        "duration": 0
+      },
+      {
+        "name": "SQL_TRANSFORMATION",
+        "group": "PREPARATION",
+        "duration": 5
+      },
+      {
+        "name": "SQL_PARSE_AND_OPTIMIZE",
+        "group": "PREPARATION",
+        "duration": 13
+      },
+      {
+        "name": "MODEL_MATCHING",
+        "group": "PREPARATION",
+        "duration": 7
+      },
+      {
+        "name": "SQL_PUSHDOWN_TRANSFORMATION",
+        "group": null,
+        "duration": 3
+      },
+      {
+        "name": "SPARK_JOB_EXECUTION",
+        "group": null,
+        "duration": 11463
+      }
+    ],
+    "exception": false,
+    "timeout": false,
+    "prepare": false,
+    "stopByUser": false,
+    "partial": false,
+    "totalScanRows": 9994,
+    "totalScanBytes": 1633816,
+    "refused": false,
+    "isException": false,
+    "appMasterURL": "/kylin/sparder/SQL/execution/?id=95069",
+    "pushDown": true,
+    "is_prepare": false,
+    "is_timeout": false,
+    "is_refused": false,
+    "is_stop_by_user": false,
+    "realizations": [],
+    "executed_plan": null
+  },
+  "msg": ""
+}
+
+
+
+
+# empty row
+select 1 from (select 1) where 0=1
+sudo ./gor --input-raw :8194 --output-file   empty_row_consistent.gor
+./gor --input-file empty_row_consistent.gor --output-http="http://127.0.0.1:5000"
+
+{
+  "code": "000",
+  "data": {
+    "columnMetas": [
+      {
+        "isNullable": 0,
+        "displaySize": 10,
+        "label": "EXPR$0",
+        "name": "EXPR$0",
+        "schemaName": null,
+        "catelogName": null,
+        "tableName": null,
+        "precision": 10,
+        "scale": 0,
+        "columnType": 4,
+        "columnTypeName": "INTEGER",
+        "autoIncrement": false,
+        "searchable": false,
+        "currency": false,
+        "definitelyWritable": false,
+        "caseSensitive": false,
+        "readOnly": false,
+        "signed": true,
+        "writable": false
+      }
+    ],
+    "results": [],
+    "affectedRowCount": 0,
+    "exceptionMessage": null,
+    "duration": 222,
+    "scanRows": [],
+    "scanBytes": [],
+    "failTimes": -1,
+    "resultRowCount": 0,
+    "shufflePartitions": 0,
+    "hitExceptionCache": false,
+    "storageCacheUsed": false,
+    "storageCacheType": null,
+    "queryStatistics": null,
+    "queryId": "ae7b4b9f-4790-6255-a525-ca0bde0c6b5f",
+    "server": "10.198.32.78:8194",
+    "signature": null,
+    "engineType": "CONSTANTS",
+    "traces": [
+      {
+        "name": "HTTP_RECEPTION",
+        "group": null,
+        "duration": 6
+      },
+      {
+        "name": "GET_ACL_INFO",
+        "group": "PREPARATION",
+        "duration": 0
+      },
+      {
+        "name": "SQL_TRANSFORMATION",
+        "group": "PREPARATION",
+        "duration": 8
+      },
+      {
+        "name": "SQL_PARSE_AND_OPTIMIZE",
+        "group": "PREPARATION",
+        "duration": 91
+      },
+      {
+        "name": "EXECUTION",
+        "group": "JOB_EXECUTION",
+        "duration": 112
+      },
+      {
+        "name": "FETCH_RESULT",
+        "group": "JOB_EXECUTION",
+        "duration": 0
+      }
+    ],
+    "exception": false,
+    "timeout": false,
+    "prepare": false,
+    "stopByUser": false,
+    "partial": false,
+    "totalScanRows": 0,
+    "totalScanBytes": 0,
+    "refused": false,
+    "isException": false,
+    "appMasterURL": "",
+    "pushDown": false,
+    "is_prepare": false,
+    "is_timeout": false,
+    "is_refused": false,
+    "is_stop_by_user": false,
+    "realizations": [],
+    "executed_plan": null
+  },
+  "msg": ""
+}
+
+
+
+
+# exception
+SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select YYYYMM_grp, sum("Value") S2
+from (select "Value", cast(cast(floor(YYYYMM to day) as varchar) as date) YYYYMM_grp
+from default_gti71rg8.s3_kyligencezentest1_20230404154322) t
+group by YYYYMM_grp
+order by YYYYMM_grp desc
+limit 20) AS "1681893691451"
+sudo ./gor --input-raw :8194 --output-file   exception.gor
+./gor --input-file exception.gor --output-http="http://127.0.0.1:5000"
+
+{
+  "code": "000",
+  "data": {
+    "columnMetas": null,
+    "results": null,
+    "affectedRowCount": 0,
+    "exceptionMessage": "Error while executing SQL \"SELECT /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select YYYYMM_grp, sum(\"Value\") S2\nfrom (select \"Value\", cast(cast(FLOOR(YYYYMM to day) as varchar) as date) YYYYMM_grp\nfrom default_gti71rg8.s3_kyligencezentest1_20230404154322) t\ngroup by YYYYMM_grp\norder by YYYYMM_grp desc\nlimit 20) AS \"1681893691451\"\": From line 3, column 6 to line 3, column 57: Object 'DEFAULT_GTI71RG8' not found",
+    "duration": 10,
+    "scanRows": null,
+    "scanBytes": null,
+    "failTimes": -1,
+    "resultRowCount": 0,
+    "shufflePartitions": 0,
+    "hitExceptionCache": false,
+    "storageCacheUsed": false,
+    "storageCacheType": null,
+    "queryStatistics": null,
+    "queryId": "8a616c22-48eb-cf74-3b7e-d6b607134366",
+    "server": "10.198.32.78:8194",
+    "signature": null,
+    "engineType": null,
+    "traces": [
+      {
+        "name": "HTTP_RECEPTION",
+        "group": null,
+        "duration": 2
+      },
+      {
+        "name": "GET_ACL_INFO",
+        "group": "PREPARATION",
+        "duration": 1
+      },
+      {
+        "name": "SQL_TRANSFORMATION",
+        "group": "PREPARATION",
+        "duration": 3
+      },
+      {
+        "name": "SQL_PARSE_AND_OPTIMIZE",
+        "group": "PREPARATION",
+        "duration": 2
+      },
+      {
+        "name": "SQL_PUSHDOWN_TRANSFORMATION",
+        "group": null,
+        "duration": 2
+      }
+    ],
+    "exception": true,
+    "timeout": false,
+    "prepare": false,
+    "stopByUser": false,
+    "partial": false,
+    "totalScanRows": -1,
+    "totalScanBytes": -1,
+    "refused": false,
+    "isException": true,
+    "appMasterURL": "",
+    "pushDown": false,
+    "is_prepare": false,
+    "is_timeout": false,
+    "is_refused": false,
+    "is_stop_by_user": false,
+    "realizations": null,
+    "executed_plan": null
+  },
+  "msg": ""
+}

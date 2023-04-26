@@ -1,0 +1,26 @@
+1 82a420027f00000193932388 1682072133284765437 0
+POST /kylin/api/query HTTP/1.1
+Host: 127.0.0.1:8194
+Connection: keep-alive
+Content-Length: 317
+sec-ch-ua: "(Not(A:Brand";v="8", "Chromium";v="101"
+X-Progress-Invisiable: true
+Accept-Language: cn
+sec-ch-ua-mobile: ?0
+Authorization: 
+Content-Type: application/json;charset=UTF-8
+Accept: application/vnd.apache.kylin-v4+json
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.53 Vulcan/0.4.0.123 Safari/537.36
+Auto: false
+sec-ch-ua-platform: "Linux"
+Origin: http://127.0.0.1:8194
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8194/kylin/
+Accept-Encoding: gzip, deflate, br
+Cookie: d070507974a654e73639648623d170138d496bf4a33279d05dcf0c1782aada5d=ZTlmYTAzZDYtMjdmMy00MzY4LTg4ZWUtMWQ1YjQzYmNkYjQ0
+
+{"limit":500,"offset":0,"project":"zen","sql":"SELECT   * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from DEFAULT_WV8L1AC8.retail_stores_by_transaction) t) AS \"1682056877916\"\nLIMIT 500","stopId":"query_1guhkvnkv"}
+🐵🙈🙉

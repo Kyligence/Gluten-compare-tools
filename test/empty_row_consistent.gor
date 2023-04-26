@@ -1,0 +1,70 @@
+1 865820027f00000177f2d7e8 1682218032116493951 0
+POST /kylin/api/query HTTP/1.1
+Host: 127.0.0.1:8194
+Connection: keep-alive
+Content-Length: 110
+sec-ch-ua: "(Not(A:Brand";v="8", "Chromium";v="101"
+X-Progress-Invisiable: true
+Accept-Language: cn
+sec-ch-ua-mobile: ?0
+Authorization: 
+Content-Type: application/json;charset=UTF-8
+Accept: application/vnd.apache.kylin-v4+json
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.53 Vulcan/0.4.0.123 Safari/537.36
+Auto: false
+sec-ch-ua-platform: "Linux"
+Origin: http://127.0.0.1:8194
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8194/kylin/
+Accept-Encoding: gzip, deflate, br
+Cookie: d070507974a654e73639648623d170138d496bf4a33279d05dcf0c1782aada5d=ODU5YWRiMTUtYjJkMS00ZDMzLWEyYjItMzgxMGYzMWU4MWQw
+
+{"limit":500,"offset":0,"project":"zen","sql":"select 1 from (select 1) where 0=1","stopId":"query_1gum046vh"}
+🐵🙈🙉
+1 865820027f00000177f2dc61 1682218035098679827 0
+GET /kylin/api/system/license/nodes?isAuto=true HTTP/1.1
+Host: 127.0.0.1:8194
+Connection: keep-alive
+sec-ch-ua: "(Not(A:Brand";v="8", "Chromium";v="101"
+Accept-Language: cn
+sec-ch-ua-mobile: ?0
+Authorization: 
+Auto: true
+Accept: application/vnd.apache.kylin-v4+json
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.53 Vulcan/0.4.0.123 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8194/kylin/
+Accept-Encoding: gzip, deflate, br
+Cookie: d070507974a654e73639648623d170138d496bf4a33279d05dcf0c1782aada5d=ODU5YWRiMTUtYjJkMS00ZDMzLWEyYjItMzgxMGYzMWU4MWQw
+
+
+🐵🙈🙉
+1 865820027f00000177f2de98 1682218035103625176 0
+GET /kylin/api/system/license/capacity?isAuto=true HTTP/1.1
+Host: 127.0.0.1:8194
+Connection: keep-alive
+sec-ch-ua: "(Not(A:Brand";v="8", "Chromium";v="101"
+Accept-Language: cn
+sec-ch-ua-mobile: ?0
+Authorization: 
+Auto: true
+Accept: application/vnd.apache.kylin-v4+json
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.53 Vulcan/0.4.0.123 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8194/kylin/
+Accept-Encoding: gzip, deflate, br
+Cookie: d070507974a654e73639648623d170138d496bf4a33279d05dcf0c1782aada5d=ODU5YWRiMTUtYjJkMS00ZDMzLWEyYjItMzgxMGYzMWU4MWQw
+
+
+🐵🙈🙉

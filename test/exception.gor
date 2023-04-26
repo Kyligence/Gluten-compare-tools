@@ -1,0 +1,26 @@
+1 d04a20027f000001bf0b38b8 1682229146884245091 0
+POST /kylin/api/query HTTP/1.1
+Host: 127.0.0.1:8194
+Connection: keep-alive
+Content-Length: 418
+sec-ch-ua: "(Not(A:Brand";v="8", "Chromium";v="101"
+X-Progress-Invisiable: true
+Accept-Language: cn
+sec-ch-ua-mobile: ?0
+Authorization: 
+Content-Type: application/json;charset=UTF-8
+Accept: application/vnd.apache.kylin-v4+json
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.53 Vulcan/0.4.0.123 Safari/537.36
+Auto: false
+sec-ch-ua-platform: "Linux"
+Origin: http://127.0.0.1:8194
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8194/kylin/
+Accept-Encoding: gzip, deflate, br
+Cookie: d070507974a654e73639648623d170138d496bf4a33279d05dcf0c1782aada5d=OTc5MTJmMTYtYWQzMy00NWRlLWIyNGEtNjcxMDkzMTdjZDZj
+
+{"limit":500,"offset":0,"project":"zen","sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select YYYYMM_grp, sum(\"Value\") S2\nfrom (select \"Value\", cast(cast(floor(YYYYMM to day) as varchar) as date) YYYYMM_grp\nfrom default_gti71rg8.s3_kyligencezentest1_20230404154322) t\ngroup by YYYYMM_grp\norder by YYYYMM_grp desc\nlimit 20) AS \"1681893691451\"","stopId":"query_1gumand80"}
+🐵🙈🙉

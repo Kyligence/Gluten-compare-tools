@@ -1,0 +1,3715 @@
+1 b2c01b9e0a0102ba7a57c381 1682056855602492052 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 b2c21b9e0a0102babf91b740 1682056855702401143 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 a5e41b9e0a0102ba6553b5e9 1682056856335389465 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 eb681b9e0a0102cfd26af6f8 1682056858006648079 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594be41 1682056859030133806 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 b2f21b9e0a0102ba329eebcb 1682056859117692753 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 a6341b9e0a0102bab878a318 1682056864227302273 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594c0b9 1682056869065505474 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 a5e41b9e0a0102ba6555b2fe 1682056871335137472 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ec081b9e0a0102cfc3eb03d4 1682056873006993621 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389779eb 1682056874071466009 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226aa-1404cff20e00128010b79481
+Content-Length: 434
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select YYYYMM_grp, sum(\"Value\") S2\nfrom (select \"Value\", cast(cast(floor(YYYYMM to day) as varchar) as date) YYYYMM_grp\n    from default_gti71rg8.s3_kyligencezentest1_20230404154322) t\ngroup by YYYYMM_grp\norder by YYYYMM_grp desc\nlimit 20) AS \"1681893691451\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede373071 1682056874075639505 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226aa-0dfc43f12312a8ff7d176926
+Content-Length: 433
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select YYYYMM_grp, sum(\"Value\") S2\nfrom (select \"Value\", cast(cast(floor(YYYYMM to day) as varchar) as date) YYYYMM_grp\n    from default_gti71rg8.s3_kyligencezentest1_20230404154322) t\ngroup by YYYYMM_grp\norder by YYYYMM_grp desc\nlimit 1) AS \"1681893691451\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec741b9e0a01027e949b4228 1682056874110786540 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226aa-4d0843f47283daea3727707c
+Content-Length: 1320
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select coalesce(t1.YYYYhyphenMMhyphenDDHHmmss_grp, t4.YYYYhyphenMMhyphenDDHHmmsssss_grp) timecol1, coalesce(t1.S1, 0) - coalesce(t4.S2, 0) S1S2\nfrom (select YYYYhyphenMMhyphenDDHHmmss_grp, sum(\"Value\") S1\n    from (select \"Value\", floor(YYYYhyphenMMhyphenDDHHmmss to second) YYYYhyphenMMhyphenDDHHmmss_grp\n        from default_gti71rg8.s3_kyligencezentest1_20230408101629\n        where YYYYhyphenMMhyphenDDHHmmss in (timestamp '2020-01-01 01:01:01', timestamp '2020-01-02 01:01:01', timestamp '2020-01-03 01:01:01')) t0\n    group by YYYYhyphenMMhyphenDDHHmmss_grp) t1\n  full join (select YYYYhyphenMMhyphenDDHHmmsssss_grp, sum(\"Value\") S2\n    from (select \"Value\", floor(YYYYhyphenMMhyphenDDHHmmsssss to second) YYYYhyphenMMhyphenDDHHmmsssss_grp\n        from default_gti71rg8.s3_kyligencezentest1_20230404154322\n        where YYYYhyphenMMhyphenDDHHmmsssss in (timestamp '2020-01-01 01:01:01', timestamp '2020-01-02 01:01:01', timestamp '2020-01-03 01:01:01')) t3\n    group by YYYYhyphenMMhyphenDDHHmmsssss_grp) t4 on t1.YYYYhyphenMMhyphenDDHHmmss_grp = t4.YYYYhyphenMMhyphenDDHHmmsssss_grp\norder by 1 desc\nlimit 1) AS \"1681893691451\"","forcedToPushDown":true}
+🐵🙈🙉
+1 eca41b9e0a01027e2998f0c2 1682056874110843220 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226aa-3bbc619066b34658535e7b5a
+Content-Length: 1321
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1681893691451, 2023-04-19 08:41:31) */ * FROM (select coalesce(t1.YYYYhyphenMMhyphenDDHHmmss_grp, t4.YYYYhyphenMMhyphenDDHHmmsssss_grp) timecol1, coalesce(t1.S1, 0) - coalesce(t4.S2, 0) S1S2\nfrom (select YYYYhyphenMMhyphenDDHHmmss_grp, sum(\"Value\") S1\n    from (select \"Value\", floor(YYYYhyphenMMhyphenDDHHmmss to second) YYYYhyphenMMhyphenDDHHmmss_grp\n        from default_gti71rg8.s3_kyligencezentest1_20230408101629\n        where YYYYhyphenMMhyphenDDHHmmss in (timestamp '2020-01-01 01:01:01', timestamp '2020-01-02 01:01:01', timestamp '2020-01-03 01:01:01')) t0\n    group by YYYYhyphenMMhyphenDDHHmmss_grp) t1\n  full join (select YYYYhyphenMMhyphenDDHHmmsssss_grp, sum(\"Value\") S2\n    from (select \"Value\", floor(YYYYhyphenMMhyphenDDHHmmsssss to second) YYYYhyphenMMhyphenDDHHmmsssss_grp\n        from default_gti71rg8.s3_kyligencezentest1_20230404154322\n        where YYYYhyphenMMhyphenDDHHmmsssss in (timestamp '2020-01-01 01:01:01', timestamp '2020-01-02 01:01:01', timestamp '2020-01-03 01:01:01')) t3\n    group by YYYYhyphenMMhyphenDDHHmmsssss_grp) t4 on t1.YYYYhyphenMMhyphenDDHHmmss_grp = t4.YYYYhyphenMMhyphenDDHHmmsssss_grp\norder by 1 desc\nlimit 20) AS \"1681893691451\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b3ba1b9e0a0102ba929b6453 1682056874118037207 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38978341 1682056876961471365 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ac-44fac0ef676f29a20ec60115
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056876957, 2023-04-21 06:01:16) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_xj719th8.retail_stores_by_transaction) AS \"1682056876957\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38978b21 1682056877920187090 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ad-623fb74469cfeee330702209
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056877916, 2023-04-21 06:01:17) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xj719th8.retail_stores_by_transaction) t) AS \"1682056877916\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37399d 1682056878397810270 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ae-69d23cc558034bf941ebd92c
+Content-Length: 192
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"92559641315164163","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_b8rv1rg8.s3_gtma_20230314153902\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38979305 1682056878754384264 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ae-5d464ea93386dd76109f0b03
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056878749, 2023-04-21 06:01:18) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xj719th8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056878749\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594c331 1682056879066789013 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ec881b9e0a01027ede374060 1682056879155977621 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226af-6f73b26a6e55171f5ccbd379
+Content-Length: 204
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_20230409113224\nlimit 1) AS \"1681968479000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878a453 1682056879226651084 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e3897e44a 1682056879620394895 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226af-6613b7be286d72ab78df4b95
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056879616, 2023-04-21 06:01:19) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xj719th8.retail_stores_by_transaction) t) AS \"1682056879616\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede3763d4 1682056879834842517 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226af-7bf756bc5e4f7c64178b9b47
+Content-Length: 189
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.KZ_6998\nlimit 1) AS \"1681789076000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3897ec2e 1682056880251107989 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b0-289f3df9689a62f53c4e9516
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056880247, 2023-04-21 06:01:20) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xj719th8.retail_stores_by_transaction) AS \"1682056880247\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede376a7e 1682056880572325425 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b0-00ea74473911781d7202e30e
+Content-Length: 192
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_20230410231701\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3897f412 1682056880911017277 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b0-406efb343401d32520698876
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056880906, 2023-04-21 06:01:20) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xj719th8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056880906\"","forcedToPushDown":true}
+🐵🙈🙉
+1 36921b9e0a01038c49ef3aaa 1682056881082189011 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ec881b9e0a01027ede378e02 1682056881195373496 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b1-4d2bf12c53ce1e2b6772496c
+Content-Length: 200
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_1GB_2\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede3794b0 1682056881641853162 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b1-22ce46462a31d7042e3e9dfc
+Content-Length: 198
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_1GB\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38984202 1682056881837054135 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b1-4a05cf8f6b1d4c334e43dad3
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056881832, 2023-04-21 06:01:21) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xj719th8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056881832\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede379b5e 1682056882151440665 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b2-4f90fbe27a2b3c4a27494d83
+Content-Length: 199
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_600M\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37a20d 1682056882736246118 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b2-642e45bc04928e84333605fc
+Content-Length: 201
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_200M_2\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38989013 1682056882973844949 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b2-2c4c5ed04081a9882a5d3ba1
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056882969, 2023-04-21 06:01:22) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xj719th8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056882969\"","forcedToPushDown":true}
+🐵🙈🙉
+1 95081b9e0a01027eb64407b7 1682056883054640386 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ec881b9e0a01027ede37a8bc 1682056883155391347 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b3-70d70ce92de991c755f5c973
+Content-Length: 201
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_200M_3\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37af6b 1682056883663581826 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b3-6c99cdca5e11bf2220d098b6
+Content-Length: 199
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_test_200M\nlimit 1) AS \"1681032923000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3898de87 1682056883821151366 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b3-2af9041026a2045550446b32
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056883817, 2023-04-21 06:01:23) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xj719th8.retail_stores_by_transaction) AS \"1682056883817\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3898e66b 1682056884622178381 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b4-1e6786625fd5c15f775f7bbb
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161424870042357763","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056884617, 2023-04-21 06:01:24) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xj719th8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056884617\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37b61a 1682056885226907170 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b5-15c0f8453daf465d2d41733d
+Content-Length: 199
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_bj_tpch_orders\nlimit 1) AS \"1678075060000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389926f0 1682056885439087311 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b5-70993e4b5d1339dd47d0d25c
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056885434, 2023-04-21 06:01:25) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056885434\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b4321b9e0a0102ba4841b9d7 1682056885606163931 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 b4341b9e0a0102bac2c20845 1682056885702041243 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 ec881b9e0a01027ede37bcb3 1682056886216833313 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b6-33b9712e036cbaf01e3d72b0
+Content-Length: 204
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93029942410919939","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_n13d1rg8.s3_gtma_20230409121337\nlimit 1) AS \"1681032922000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba6557b00c 1682056886335799787 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38997501 1682056886643810086 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b6-1e93143f62f094783ba32819
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056886638, 2023-04-21 06:01:26) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_e4kq1pi8.retail_stores_by_transaction) AS \"1682056886638\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38997ce1 1682056887372774154 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b7-5108ecf84486be3c7775e800
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056887368, 2023-04-21 06:01:27) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_e4kq1pi8.retail_stores_by_transaction) t) AS \"1682056887368\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37c366 1682056887407804841 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b7-1bb1cc5b4cf0380b22e67e8b
+Content-Length: 206
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"93394869953564674","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_ohnl7sg8.s3_kyligencezentestbj_20230224160552\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecae1b9e0a0102cf75655c26 1682056888006696399 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389984c5 1682056888071426052 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b8-0d56b98967e25a156b5405c6
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056888066, 2023-04-21 06:01:28) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056888066\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3899d60a 1682056888895317219 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b8-21b4da970c509032065f2254
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056888891, 2023-04-21 06:01:28) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_e4kq1pi8.retail_stores_by_transaction) t) AS \"1682056888891\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594c5a9 1682056889067871057 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 b4641b9e0a0102ba40138bdd 1682056889117425019 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e3899ddee 1682056889641088345 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b9-070bc2567d3f0f235416b24a
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056889637, 2023-04-21 06:01:29) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_e4kq1pi8.retail_stores_by_transaction) AS \"1682056889637\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37c9ff 1682056889776889856 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226b9-7ad38a2808c7f677275e6319
+Content-Length: 190
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_gti71rg8.special\nlimit 1) AS \"1678456375000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e3899e5d2 1682056890370262961 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ba-7dfa62fc68a4b4e0094a77ee
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056890365, 2023-04-21 06:01:30) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056890365\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37d0ba 1682056890474650101 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ba-61337bc5091d0e2268619e3d
+Content-Length: 190
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"130714513177763842","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_gti71rg8.table20230307105526\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389a33c2 1682056891268681155 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bb-0df0bb7d7ab944e048194369
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056891262, 2023-04-21 06:01:31) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056891262\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37d775 1682056891810243852 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bb-14bcbc5011b73e301af63464
+Content-Length: 192
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_na4g1rg8.table_1_w\nlimit 1) AS \"1678343897000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389a81d1 1682056892148549185 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bc-4a818dde1ea0f56807750a66
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056892144, 2023-04-21 06:01:32) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056892144\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37de30 1682056892461702665 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bc-23e65210295e0c491669e2fe
+Content-Length: 201
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"154592908936151043","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_re9uazg8.s3_gtma_test_row_count_refresh\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ad045 1682056892971155508 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bc-053b06ca7822c3ae4176cdfa
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056892967, 2023-04-21 06:01:32) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_e4kq1pi8.retail_stores_by_transaction) AS \"1682056892967\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37e4e8 1682056893114011619 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bd-1fb4fa0464d95220326193bd
+Content-Length: 205
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"154592908936151043","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_re9uazg8.s3_gtma_20230313123118\nlimit 1) AS \"1678692740000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37ebae 1682056893711657066 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bd-4b488b821160b4aa25f18032
+Content-Length: 215
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"154592908936151043","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_re9uazg8.s3_gtma_20230313122857_no_suffix\nlimit 1) AS \"1678681561000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ad829 1682056893751084681 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bd-4413b1fa206d3d50559e1e0b
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"169757195300937731","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056893746, 2023-04-21 06:01:33) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_e4kq1pi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056893746\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37f277 1682056894155530237 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226be-411e89ad3275144b5e431f8e
+Content-Length: 205
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"154592908936151043","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_re9uazg8.s3_gtma_20230313110030\nlimit 1) AS \"1678677064000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878a58e 1682056894227247668 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389b18b0 1682056895058405576 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226bf-11e2de2555a1cd030d0026ca
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056895054, 2023-04-21 06:01:35) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_ofne8mi8.retail_stores_by_transaction) t) AS \"1682056895054\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389b2094 1682056896063091869 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-0055c7c52f2a40800834291e
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056896059, 2023-04-21 06:01:36) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_ofne8mi8.retail_stores_by_transaction) AS \"1682056896059\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec881b9e0a01027ede37f93b 1682056896329950652 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-26c6ad451087653950a0834c
+Content-Length: 184
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166988476262817795","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_wa2pzhi8.owidcoviddata\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ec741b9e0a01027e949b4b62 1682056896387201669 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-0de371d467964faf6411132b
+Content-Length: 190
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166988476262817795","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_wa2pzhi8.AllPipelineList_v26\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 eca41b9e0a01027e2998fa3a 1682056896464037498 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-7c91642b4750b4a97188bb2e
+Content-Length: 186
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166988476262817795","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_wa2pzhi8.All_Cloud_Bills\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 bda81b9e0a01027e795efd45 1682056896515836500 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-0e64a19443b084a52dfd6f89
+Content-Length: 199
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166988476262817795","limit":500,"offset":0,"sql":"SELECT * FROM (select count(*) count_all\nfrom default_wa2pzhi8.retail_stores_by_transaction\nlimit 1) AS \"0\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389b2874 1682056896873133034 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c0-238960dd6f9b06a71a024f41
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056896868, 2023-04-21 06:01:36) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_ofne8mi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056896868\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389b79b9 1682056897596026802 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c1-221a42c22f48465b6c2d609c
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056897591, 2023-04-21 06:01:37) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_ofne8mi8.retail_stores_by_transaction) t) AS \"1682056897591\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389b819d 1682056898301350032 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c2-73dab2ef230e10617709f83c
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056898297, 2023-04-21 06:01:38) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_ofne8mi8.retail_stores_by_transaction) AS \"1682056898297\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389b8981 1682056899044480602 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c3-23df9c8d50dbb17d0ec259ab
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056899039, 2023-04-21 06:01:39) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_ofne8mi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056899039\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594c821 1682056899106378480 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389bd771 1682056899853586424 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c3-04b749ae2a7ef34c436ce120
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056899848, 2023-04-21 06:01:39) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_ofne8mi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056899848\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389c2580 1682056900623531091 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c4-3c20a32f00ea2f9224870f10
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056900619, 2023-04-21 06:01:40) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_ofne8mi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056900619\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba6559ad1f 1682056901335679228 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389c73f4 1682056901379452539 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c5-3332b949054c194449a6f932
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056901375, 2023-04-21 06:01:41) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_ofne8mi8.retail_stores_by_transaction) AS \"1682056901375\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389c7bd9 1682056902039650726 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c6-4ec74dce05238b561ad7bc61
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168782106233315330","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056902035, 2023-04-21 06:01:42) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_ofne8mi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056902035\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389cbc5e 1682056902942642207 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c6-4746c47c3cad389c57729aca
+Content-Length: 468
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056902938, 2023-04-21 06:01:42) */ * FROM (select LO_ORDERDATE_grp, sum(LO_LINENUMBER) \"M1 lineorder1 有时间列\"\nfrom (select LO_LINENUMBER, cast(cast(floor(LO_ORDERDATE to day) as varchar) as date) LO_ORDERDATE_grp\n    from default_na4g1rg8.SSBLINEORDER1) t\ngroup by LO_ORDERDATE_grp\norder by LO_ORDERDATE_grp desc) AS \"1682056902938\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ed7a1b9e0a0102cf0fb2c210 1682056903006344646 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389cc5bb 1682056903930968216 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c7-63df3dda34e3d75e2e2d869c
+Content-Length: 985
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056903926, 2023-04-21 06:01:43) */ * FROM (select coalesce(t0.LO_ORDERDATE_grp, t2.LO_ORDERDATE_grp) 订单日期, coalesce(t0.\"M1 lineorder1 有时间列\", 0) + coalesce(t2.\"ssb lineorder_1\", 0) \"C1 lineorder 订单日期\"\nfrom (select LO_ORDERDATE_grp, sum(LO_LINENUMBER) \"M1 lineorder1 有时间列\"\n    from (select LO_LINENUMBER, cast(cast(floor(LO_ORDERDATE to day) as varchar) as date) LO_ORDERDATE_grp\n        from default_na4g1rg8.SSBLINEORDER1) t\n    group by LO_ORDERDATE_grp) t0\n  full join (select LO_ORDERDATE_grp, sum(LO_ORDTOTALPRICE) \"ssb lineorder_1\"\n    from (select LO_ORDTOTALPRICE, cast(cast(floor(LO_ORDERDATE to day) as varchar) as date) LO_ORDERDATE_grp\n        from default_na4g1rg8.SSBLINEORDER_1) t1\n    group by LO_ORDERDATE_grp) t2 on t0.LO_ORDERDATE_grp = t2.LO_ORDERDATE_grp\norder by 1 desc) AS \"1682056903926\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b5121b9e0a0102ba4f2e96a4 1682056904117383128 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389ccf24 1682056905660100274 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226c9-03e9801b7edbf4a139a9a6da
+Content-Length: 985
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056905654, 2023-04-21 06:01:45) */ * FROM (select coalesce(t0.LO_ORDERDATE_grp, t2.LO_ORDERDATE_grp) 订单日期, coalesce(t0.\"M1 lineorder1 有时间列\", 0) + coalesce(t2.\"ssb lineorder_1\", 0) \"C1 lineorder 订单日期\"\nfrom (select LO_ORDERDATE_grp, sum(LO_LINENUMBER) \"M1 lineorder1 有时间列\"\n    from (select LO_LINENUMBER, cast(cast(floor(LO_ORDERDATE to day) as varchar) as date) LO_ORDERDATE_grp\n        from default_na4g1rg8.SSBLINEORDER1) t\n    group by LO_ORDERDATE_grp) t0\n  full join (select LO_ORDERDATE_grp, sum(LO_ORDTOTALPRICE) \"ssb lineorder_1\"\n    from (select LO_ORDTOTALPRICE, cast(cast(floor(LO_ORDERDATE to day) as varchar) as date) LO_ORDERDATE_grp\n        from default_na4g1rg8.SSBLINEORDER_1) t1\n    group by LO_ORDERDATE_grp) t2 on t0.LO_ORDERDATE_grp = t2.LO_ORDERDATE_grp\norder by 1 desc) AS \"1682056905654\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389cd88c 1682056906907291475 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ca-631a29c17d68aeff4e739330
+Content-Length: 432
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056906902, 2023-04-21 06:01:46) */ * FROM (with\n_v_LINEORDER_LF_PART as (\nselect *\nfrom default_na4g1rg8.SSBLINEORDER\n  left join default_na4g1rg8.SSBPART on SSBLINEORDER.LO_PARTKEY = SSBPART.P_PARTKEY\n)\n\nselect sum(LO_ORDERKEY) \"M1 \"\nfrom _v_LINEORDER_LF_PART LINEORDER_LF_PART) AS \"1682056906902\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ce052 1682056908421487135 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226cc-2857b992188eee824809d8cc
+Content-Length: 439
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056908416, 2023-04-21 06:01:48) */ * FROM (with\n_v_LINEORDER_LF_PART as (\nselect *\nfrom default_na4g1rg8.SSBLINEORDER\n  left join default_na4g1rg8.SSBPART on SSBLINEORDER.LO_PARTKEY = SSBPART.P_PARTKEY\n)\n\nselect sum(P_SIZE) \"M1 line_lf_part\"\nfrom _v_LINEORDER_LF_PART LINEORDER_LF_PART) AS \"1682056908416\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594ca99 1682056909106599167 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 a6341b9e0a0102bab878a6c9 1682056909226353679 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389ce82e 1682056909592093818 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226cd-4c0f774d277f01a0428a8c9f
+Content-Length: 255
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"131038633484541954","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056909587, 2023-04-21 06:01:49) */ * FROM (select sum(C_CUSTKEY) \"M1 part\"\nfrom default_na4g1rg8.SSBCUSTOMER) AS \"1682056909587\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ceff3 1682056910339177329 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ce-2c49656d2775403077115235
+Content-Length: 459
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"103863434035044355","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056910335, 2023-04-21 06:01:50) */ * FROM (select order_date_grp, count(distinct order_id) Total_Transactions\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_3kbom7h8.retail_stores_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056910335\"","forcedToPushDown":true}
+🐵🙈🙉
+1 2d641b9e0a01038ccd89adcd 1682056911083819370 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389d1f45 1682056911476773472 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226cf-248741484d8867ab49608f6e
+Content-Length: 576
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"103863434035044355","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056911472, 2023-04-21 06:01:51) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) Average_Transaction_Value\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_3kbom7h8.retail_stores_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056911472\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389d6d65 1682056912325291039 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d0-228266dc44b2e6992dd0aad2
+Content-Length: 514
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"103863434035044355","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056912318, 2023-04-21 06:01:52) */ * FROM (select order_date_grp, sum($f14) Total_Sales\nfrom (select cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_3kbom7h8.retail_stores_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056912318\"","forcedToPushDown":true}
+🐵🙈🙉
+1 90c41b9e0a01027ec1f2f732 1682056913083210288 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389dbb18 1682056913248693998 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d1-08041d2c4d199d9f6e91675e
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056913244, 2023-04-21 06:01:53) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xjuznki8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056913244\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389e0928 1682056914285712240 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d2-18de126025e52ad067e951e3
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056914281, 2023-04-21 06:01:54) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xjuznki8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056914281\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389e5718 1682056915107544102 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d3-71a5ebbb0368005e1f38aa63
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056915103, 2023-04-21 06:01:55) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xjuznki8.retail_stores_by_transaction) AS \"1682056915103\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b58a1b9e0a0102ba89761105 1682056915609666295 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 b58c1b9e0a0102bacea8a0ac 1682056915702501193 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389e5efc 1682056915780629555 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d3-4e3395445a8a7fca63a1c396
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056915777, 2023-04-21 06:01:55) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_xjuznki8.retail_stores_by_transaction) AS \"1682056915777\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba655baa3c 1682056916335161091 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389e66dc 1682056916422566037 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d4-1dcc5be15d5bd4a465edcdc7
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056916418, 2023-04-21 06:01:56) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xjuznki8.retail_stores_by_transaction) t) AS \"1682056916418\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389e6ec0 1682056917107251152 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d5-2c75a8b47a47b45a04cb1a7c
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056917102, 2023-04-21 06:01:57) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xjuznki8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056917102\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ec005 1682056917934984042 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d5-414acda7485b017a549d7df4
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056917930, 2023-04-21 06:01:57) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xjuznki8.retail_stores_by_transaction) t) AS \"1682056917930\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ee201b9e0a0102cfbf3867c6 1682056918006628359 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389ec7e9 1682056918592144420 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d6-1a080ba10805caaa1f0b2a93
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056918587, 2023-04-21 06:01:58) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xjuznki8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056918587\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594cd11 1682056919108043467 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 b5ba1b9e0a0102bad7e85be0 1682056919116897196 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e389f165d 1682056919400520672 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d7-46e993d32f712b482c5f6d22
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056919396, 2023-04-21 06:01:59) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xjuznki8.retail_stores_by_transaction) AS \"1682056919396\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389f1e41 1682056920266095938 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d8-683c1d2f507a245b06817239
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"167646163728244739","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056920261, 2023-04-21 06:02:00) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xjuznki8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056920261\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389f5ec6 1682056921143852061 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226d9-15ef52950599ca8f3b48e393
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056921139, 2023-04-21 06:02:01) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_whwg90h8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056921139\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389fad3a 1682056922140190548 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226da-7ec0017960260fe44afa4a35
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056922135, 2023-04-21 06:02:02) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_whwg90h8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056922135\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e389ffb49 1682056923056798523 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226db-161e688310664f4121fcf1e5
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056923052, 2023-04-21 06:02:03) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_whwg90h8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056923052\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a04939 1682056923969011456 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226db-0e6e63b7634b9eb14b1befdc
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056923962, 2023-04-21 06:02:03) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_whwg90h8.retail_stores_by_transaction) AS \"1682056923962\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878a804 1682056924226582108 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a05119 1682056924775088104 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226dc-683544f81870294f7d2d0a26
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056924770, 2023-04-21 06:02:04) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_whwg90h8.retail_stores_by_transaction) t) AS \"1682056924770\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a058fd 1682056925515101326 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226dd-171246ec2a61e83371608171
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056925509, 2023-04-21 06:02:05) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_whwg90h8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056925509\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a0aa42 1682056926400887400 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226de-16b87dd24525c85653ab886c
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056926396, 2023-04-21 06:02:06) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_whwg90h8.retail_stores_by_transaction) t) AS \"1682056926396\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a0b226 1682056927214405310 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226df-1e3376c8140daa5569f90d66
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056927210, 2023-04-21 06:02:07) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_whwg90h8.retail_stores_by_transaction) AS \"1682056927210\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a0ba0a 1682056927967832370 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226df-05ddf57500d5b5c425505e51
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056927964, 2023-04-21 06:02:07) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_whwg90h8.retail_stores_by_transaction) AS \"1682056927964\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a0c1ee 1682056928726328771 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e0-3b06907e097c6ac42e20db73
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"163956846648532994","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056928722, 2023-04-21 06:02:08) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_whwg90h8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056928722\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594cf89 1682056929143762650 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a10275 1682056929923664021 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e1-380ad3011ef6a4fe09cb8407
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056929919, 2023-04-21 06:02:09) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_vm1g6di8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056929919\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a15084 1682056930938371578 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e2-48c0c3df2ac8124831cfcf7e
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056930933, 2023-04-21 06:02:10) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_vm1g6di8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056930933\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba655da756 1682056931335964804 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a19e76 1682056932124085867 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e4-71335978145b634e70f6358a
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056932120, 2023-04-21 06:02:12) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_vm1g6di8.retail_stores_by_transaction) AS \"1682056932120\"","forcedToPushDown":true}
+🐵🙈🙉
+1 807a1b9e0a0102cf2b19f297 1682056933006504778 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a1a65c 1682056933186531471 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e5-68bb3f3860dd73c33138a25e
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056933182, 2023-04-21 06:02:13) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_vm1g6di8.retail_stores_by_transaction) AS \"1682056933182\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a1ae3c 1682056933896011117 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e5-52e930fa0a5b876a12f44031
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056933888, 2023-04-21 06:02:13) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_vm1g6di8.retail_stores_by_transaction) t) AS \"1682056933888\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b6861b9e0a0102ba12a18681 1682056934117831581 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a1b620 1682056934580316830 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e6-180b0eb7177daff369b7515f
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056934575, 2023-04-21 06:02:14) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_vm1g6di8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056934575\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a20766 1682056935473045168 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e7-6dd2f5591a063bcc7199f999
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056935468, 2023-04-21 06:02:15) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_vm1g6di8.retail_stores_by_transaction) t) AS \"1682056935468\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a20f4c 1682056936606683180 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e8-57c4e98c428801194cbc03fa
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056936602, 2023-04-21 06:02:16) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_vm1g6di8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056936602\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a25dc0 1682056937503124129 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226e9-4800e947635821031eeb68c9
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056937499, 2023-04-21 06:02:17) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_vm1g6di8.retail_stores_by_transaction) AS \"1682056937499\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a265a4 1682056938247427540 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ea-546422dd3138d823760bc1f1
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165830785645584387","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056938243, 2023-04-21 06:02:18) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_vm1g6di8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056938243\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594d201 1682056939145668979 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a2a629 1682056939211604357 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226eb-3038d5343465aff76dde6a9f
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056939207, 2023-04-21 06:02:19) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_mx13wei8.retail_stores_by_transaction) AS \"1682056939207\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878a93f 1682056939226572460 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a2ae0f 1682056940322328868 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ec-18ad64e71f1e7355296f02c3
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056940318, 2023-04-21 06:02:20) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_mx13wei8.retail_stores_by_transaction) AS \"1682056940318\"","forcedToPushDown":true}
+🐵🙈🙉
+1 8aba1b9e0a01038cdaf72e59 1682056941114593322 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a2b5ef 1682056941131565443 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ed-0b8bd7de2adf6b4f3937d3ad
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056941127, 2023-04-21 06:02:21) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_mx13wei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056941127\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a30463 1682056942047226867 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ee-419c3fd0490c9290563f905f
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056942042, 2023-04-21 06:02:22) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_mx13wei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056942042\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a35273 1682056943085665730 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ef-378c186e033534554e731733
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056943080, 2023-04-21 06:02:23) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_mx13wei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056943080\"","forcedToPushDown":true}
+🐵🙈🙉
+1 975e1b9e0a01027e5b70a5fe 1682056943110114132 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a3a063 1682056944092733447 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f0-4356a46107b2bcab49703168
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056944089, 2023-04-21 06:02:24) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_mx13wei8.retail_stores_by_transaction) AS \"1682056944089\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a3a847 1682056944917437017 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f0-3870c5793e2a8b5a63b285b9
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056944913, 2023-04-21 06:02:24) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_mx13wei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056944913\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b70c1b9e0a0102baeeba7ed5 1682056945613228809 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 b7101b9e0a0102ba59fbd555 1682056945702135123 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a3e8cc 1682056945885663516 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f1-1124fe4d60f478864028c57d
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056945881, 2023-04-21 06:02:25) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_mx13wei8.retail_stores_by_transaction) t) AS \"1682056945881\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba655fa47f 1682056946335662081 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a3f0b0 1682056946636059788 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f2-1fcfd3ae43c58b53002e0de5
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056946631, 2023-04-21 06:02:26) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_mx13wei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056946631\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a441f5 1682056947486151518 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f3-0e9d75af1ca7fc580bd07406
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166186944151855107","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056947482, 2023-04-21 06:02:27) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_mx13wei8.retail_stores_by_transaction) t) AS \"1682056947482\"","forcedToPushDown":true}
+🐵🙈🙉
+1 811a1b9e0a0102cf3a9844b9 1682056948006704482 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a449d9 1682056948266637481 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f4-683817a35174b1e71f300168
+Content-Length: 386
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"90760386652979202","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056948262, 2023-04-21 06:02:28) */ * FROM (select tim2_grp, sum(ag2e) analyse_basic_yan\nfrom (select ag2e, cast(cast(floor(tim2 to day) as varchar) as date) tim2_grp\n    from default_l1l1mwg8.yan) t\ngroup by tim2_grp\norder by tim2_grp desc) AS \"1682056948262\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b73c1b9e0a0102ba86b725b8 1682056949117175581 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594d479 1682056949148331969 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a4536d 1682056949263060406 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f5-652023865a374afe5acefb98
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056949259, 2023-04-21 06:02:29) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_pghkqei8.retail_stores_by_transaction) AS \"1682056949259\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a45b4d 1682056950182147609 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f6-6c802100314fb5c6552cd9af
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056950178, 2023-04-21 06:02:30) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_pghkqei8.retail_stores_by_transaction) t) AS \"1682056950178\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a46331 1682056950975407139 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f6-7c5aba6a5ea8403433352d2a
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056950971, 2023-04-21 06:02:30) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_pghkqei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056950971\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a4b476 1682056951857807425 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f7-2963e2eb23c2754c3fac81e9
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056951853, 2023-04-21 06:02:31) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_pghkqei8.retail_stores_by_transaction) t) AS \"1682056951853\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a4bc5a 1682056952607780826 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f8-21ffd7d83c36440d42c28bc6
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056952604, 2023-04-21 06:02:32) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_pghkqei8.retail_stores_by_transaction) AS \"1682056952604\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a4c43e 1682056953432983970 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226f9-18b7b56f39479b451b1ca28e
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056953427, 2023-04-21 06:02:33) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_pghkqei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056953427\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878aa7a 1682056954226825831 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5122e 1682056954380209207 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fa-7fb30ccf118e8c7b06a6c5bd
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056954375, 2023-04-21 06:02:34) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_pghkqei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056954375\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5603d 1682056955259963877 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fb-4b4b04df7329ff880e5801d5
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056955255, 2023-04-21 06:02:35) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_pghkqei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056955255\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594d6f1 1682056955816611430 0
+GET /kylin/api/system/license/capacity HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept: application/vnd.apache.kylin-v4+json
+accept: application/vnd.apache.kylin-v4+json
+accept: application/vnd.apache.kylin-v4+json
+accept: application/vnd.apache.kylin-v4+json
+accept: application/vnd.apache.kylin-v4+json
+accept: application/vnd.apache.kylin-v4+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46S1lMSU4=
+user-agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+cookie: SESSION=ZTA3ZmE4YjgtMzkyYy00MzE2LThkMmYtZWRkYzcwNTkyYzZi
+accept-encoding: gzip,deflate
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5aeb1 1682056956067633250 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fc-745b1e0114b94cae71c1844e
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056956063, 2023-04-21 06:02:36) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_pghkqei8.retail_stores_by_transaction) AS \"1682056956063\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5b695 1682056956800147678 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fc-04eec1d1722a9c2323b6d8a2
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"166141414214377474","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056956795, 2023-04-21 06:02:36) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_pghkqei8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056956795\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5f71a 1682056957679400881 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fd-00633be11a8c6f7c15b6903e
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056957675, 2023-04-21 06:02:37) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_xir9l3i8.retail_stores_by_transaction) AS \"1682056957675\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a5fefa 1682056958598472054 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226fe-0aa6a749479f8f035e40d4a1
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056958594, 2023-04-21 06:02:38) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xir9l3i8.retail_stores_by_transaction) t) AS \"1682056958594\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594d9f3 1682056959202942888 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a606de 1682056959305739458 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-644226ff-1c53c6062a5d93d4267de683
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056959301, 2023-04-21 06:02:39) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xir9l3i8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056959301\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a65823 1682056960109631105 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422700-329b21d371a5de312fe3d6cd
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056960103, 2023-04-21 06:02:40) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_xir9l3i8.retail_stores_by_transaction) t) AS \"1682056960103\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a66007 1682056960846530498 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422700-5ba14dc71e901dcc489323a0
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056960842, 2023-04-21 06:02:40) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xir9l3i8.retail_stores_by_transaction) AS \"1682056960842\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba6561a19d 1682056961335170235 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 ecc01b9e0a01027e38a667eb 1682056961546299836 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422701-62c05d26693073a71d7e074b
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056961541, 2023-04-21 06:02:41) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_xir9l3i8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056961541\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ecc01b9e0a01027e38a6b5db 1682056962435423389 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422702-6e5a6095289c0fa239021969
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056962431, 2023-04-21 06:02:42) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xir9l3i8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056962431\"","forcedToPushDown":true}
+🐵🙈🙉
+1 81ee1b9e0a0102cf5d1e76ed 1682056963006228641 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b984b89 1682056963322475684 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422703-5fcfd32431fad12c51a03f08
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056963318, 2023-04-21 06:02:43) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xir9l3i8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056963318\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9899fd 1682056964004358572 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422704-2400517620ad752b4651e01a
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056964000, 2023-04-21 06:02:44) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_xir9l3i8.retail_stores_by_transaction) AS \"1682056964000\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b7f41b9e0a0102ba6c940442 1682056964117415576 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b98a1e1 1682056964670485172 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422704-34acbe255ea1973259435ed8
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"171683224210808834","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056964666, 2023-04-21 06:02:44) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_xir9l3i8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056964666\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b98e266 1682056965488118711 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422705-2729657c13842d5d3831f7d4
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056965483, 2023-04-21 06:02:45) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_bq8c2uh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056965483\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9922ed 1682056966569054332 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422706-33b0cf97120f02cd3711400d
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056966565, 2023-04-21 06:02:46) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_bq8c2uh8.retail_stores_by_transaction) AS \"1682056966565\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b992ad1 1682056967400869981 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422707-1835b9ad5eb9cba5181cc74d
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056967396, 2023-04-21 06:02:47) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_bq8c2uh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056967396\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b997945 1682056968269093271 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422708-139842c33775dabf20260e7f
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056968265, 2023-04-21 06:02:48) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_bq8c2uh8.retail_stores_by_transaction) t) AS \"1682056968265\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b998129 1682056969042611582 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422709-7a13642e3f893a023690810f
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056969038, 2023-04-21 06:02:49) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_bq8c2uh8.retail_stores_by_transaction) AS \"1682056969038\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594dc6b 1682056969204556360 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 a6341b9e0a0102bab878abb5 1682056969227054036 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b998909 1682056969783758991 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422709-4a6af1976d6f0b2979f62b8c
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056969779, 2023-04-21 06:02:49) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_bq8c2uh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056969779\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b99da4e 1682056970670113444 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270a-416cb94836b0d10637e87b75
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056970665, 2023-04-21 06:02:50) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_bq8c2uh8.retail_stores_by_transaction) t) AS \"1682056970665\"","forcedToPushDown":true}
+🐵🙈🙉
+1 acf21b9e0a01038cff875575 1682056971144522572 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b99e232 1682056971477921760 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270b-2a8276ce078eebee194b9e49
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056971473, 2023-04-21 06:02:51) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_bq8c2uh8.retail_stores_by_transaction) AS \"1682056971473\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b99ea16 1682056972355957872 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270c-278885e24f99c0ce1cd01afc
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056972351, 2023-04-21 06:02:52) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_bq8c2uh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056972351\"","forcedToPushDown":true}
+🐵🙈🙉
+1 8b901b9e0a01027e9d3ecf9d 1682056973138582927 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9a3806 1682056973246203174 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270d-5e40bfd4375ee4225aa4f487
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"161884741998018562","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056973241, 2023-04-21 06:02:53) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_bq8c2uh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056973241\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9a8615 1682056974182322589 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270e-101190c21abedf493f3ac6db
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056974177, 2023-04-21 06:02:54) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_o3xwqdi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056974177\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9ad407 1682056975327412556 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442270f-2435722a35afb62f4cd07bba
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056975323, 2023-04-21 06:02:55) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_o3xwqdi8.retail_stores_by_transaction) AS \"1682056975323\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b87c1b9e0a0102bad9a889d6 1682056975616966664 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 b87e1b9e0a0102ba28959d00 1682056975703135542 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9adbeb 1682056976098878527 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422710-1075b07b55957a9826944c67
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056976094, 2023-04-21 06:02:56) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_o3xwqdi8.retail_stores_by_transaction) t) AS \"1682056976094\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba65639ec2 1682056976335458753 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9ae3cf 1682056976827406347 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422710-2bd0187c4f30357874672e4a
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056976823, 2023-04-21 06:02:56) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_o3xwqdi8.retail_stores_by_transaction) AS \"1682056976823\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9aebaf 1682056977589939182 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422711-03322c706376087e4a9fa4c7
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056977585, 2023-04-21 06:02:57) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_o3xwqdi8.retail_stores_by_transaction) t) AS \"1682056977585\"","forcedToPushDown":true}
+🐵🙈🙉
+1 829a1b9e0a0102cfdb01c933 1682056978006644368 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9af393 1682056978293760748 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422712-2d1c4f1d5d8eaa3d4ad7c415
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056978289, 2023-04-21 06:02:58) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_o3xwqdi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056978289\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9b44d8 1682056979084352008 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422713-761017a1237ec39125786cba
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056979079, 2023-04-21 06:02:59) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_o3xwqdi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056979079\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b8ac1b9e0a0102bae2da1491 1682056979117057171 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594dee3 1682056979205561943 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9b92e7 1682056979978679861 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422713-68daf26f47e955481c73d316
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056979974, 2023-04-21 06:02:59) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_o3xwqdi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056979974\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9be15b 1682056980871090983 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422714-6a08d13a5098c81c49990954
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056980867, 2023-04-21 06:03:00) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_o3xwqdi8.retail_stores_by_transaction) AS \"1682056980867\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9be941 1682056981936958061 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422715-1896ee653f4cb3e04f8e32f0
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"165890857641877506","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056981932, 2023-04-21 06:03:01) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_o3xwqdi8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056981932\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9c29c6 1682056982819216375 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422716-2edd783b7bbb2c5e60981583
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056982815, 2023-04-21 06:03:02) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_m1vofwh8.retail_stores_by_transaction) AS \"1682056982815\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9c31aa 1682056983802021990 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422717-10feda7550347d841c8d2ea2
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056983798, 2023-04-21 06:03:03) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_m1vofwh8.retail_stores_by_transaction) AS \"1682056983798\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878acf0 1682056984227203997 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9c398a 1682056984525806260 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422718-0ec2d6690de96e04336f86e1
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056984521, 2023-04-21 06:03:04) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_m1vofwh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056984521\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9c87fe 1682056985351067053 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422719-52b3d5c451afbf83520a92e7
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056985346, 2023-04-21 06:03:05) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_m1vofwh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056985346\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9cd60d 1682056986262096997 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271a-4927e73b20505aea113a4f33
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056986257, 2023-04-21 06:03:06) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_m1vofwh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056986257\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9d23fd 1682056987109388549 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271b-1c54f8820c920c2a46a47947
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056987105, 2023-04-21 06:03:07) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_m1vofwh8.retail_stores_by_transaction) AS \"1682056987105\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9d2be1 1682056987779832004 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271b-2e6becf9191021ec51687888
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056987775, 2023-04-21 06:03:07) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_m1vofwh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056987775\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9d6c66 1682056988660968367 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271c-4a774f4d5022efd82d51ef90
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056988657, 2023-04-21 06:03:08) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_m1vofwh8.retail_stores_by_transaction) t) AS \"1682056988657\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594e15b 1682056989247502846 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9d744a 1682056989430199557 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271d-0a8ef26a4cda68f473959827
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056989425, 2023-04-21 06:03:09) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_m1vofwh8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056989425\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9dc58f 1682056990209766626 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271e-32e0eca46c3c00e148909d9f
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"162240061205291011","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056990205, 2023-04-21 06:03:10) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_m1vofwh8.retail_stores_by_transaction) t) AS \"1682056990205\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9dcd73 1682056990953230798 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271e-141cf4b474ac09d90c1f48ec
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056990949, 2023-04-21 06:03:10) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_f0jjyli8.retail_stores_by_transaction) AS \"1682056990949\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba65659be4 1682056991335574991 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9dd553 1682056991930782916 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442271f-0c73d2124347e40c4ace144c
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056991926, 2023-04-21 06:03:11) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_f0jjyli8.retail_stores_by_transaction) t) AS \"1682056991926\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9ddd37 1682056992790220700 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422720-5c6f33dd515ab3ef79ad48d5
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056992785, 2023-04-21 06:03:12) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_f0jjyli8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056992785\"","forcedToPushDown":true}
+🐵🙈🙉
+1 835e1b9e0a0102cf613773ed 1682056993006774029 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9e2e7d 1682056993834987686 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422721-467c5a0011f183b61ed65c4c
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056993831, 2023-04-21 06:03:13) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_f0jjyli8.retail_stores_by_transaction) t) AS \"1682056993831\"","forcedToPushDown":true}
+🐵🙈🙉
+1 b98c1b9e0a0102ba9c63440f 1682056994117062428 0
+GET /kylin/api/health HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Go-http-client/1.1
+Connection: close
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9e3661 1682056994635244269 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422722-211f9f3552dae8525e430751
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056994631, 2023-04-21 06:03:14) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_f0jjyli8.retail_stores_by_transaction) AS \"1682056994631\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9e3e46 1682056995477788235 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422723-32a0efc52225d0c62c5ff9d1
+Content-Length: 583
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056995473, 2023-04-21 06:03:15) */ * FROM (select order_date_grp order_date, sum($f14) / count(distinct order_id) \"Average Transaction Value\"\nfrom (select order_id, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_f0jjyli8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056995473\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9e8c36 1682056996474011819 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422724-7cc2a79e2cd5676f169ccc2e
+Content-Length: 528
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056996469, 2023-04-21 06:03:16) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / count(distinct order_id) \"Average Transaction Revenue\"\nfrom (select order_id, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_f0jjyli8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056996469\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9eda45 1682056997490253924 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422725-2565ec7554b1f5b4545b5831
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056997486, 2023-04-21 06:03:17) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_f0jjyli8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056997486\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9f28b9 1682056998329201110 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422726-0efdb5dc3ef7931e621f9f3c
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056998325, 2023-04-21 06:03:18) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_f0jjyli8.retail_stores_by_transaction) AS \"1682056998325\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9f309d 1682056999161144461 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422727-532c4a8158023e08724b9118
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"168754871162019842","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682056999156, 2023-04-21 06:03:19) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_f0jjyli8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682056999156\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a6341b9e0a0102bab878ae2b 1682056999227196978 0
+GET /kylin/api/monitor/spark/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
+1 a9a41b9e0a0102ba7594e3d3 1682056999259628248 0
+GET /kylin/api/jobs?time_filter=0&statuses=RUNNING HTTP/1.1
+x-real-ip: 10.1.2.186
+x-forwarded-for: 10.1.2.186, 127.0.0.1
+host: 0.0.0.0:8079
+accept: application/vnd.apache.kylin-v4-public+json
+accept-language: en
+content-type: application/json;charset=utf-8
+authorization: Basic QURNSU46ViE2ajVQZkZ1SG1XWnVtRmU=
+user-agent: Java/1.8.0_275
+x-forwarded-host: 0.0.0.0:8079
+x-forwarded-proto: http
+x-forwarded-prefix: /zenengineqatdNq_kylin/kylin
+x-forwarded-port: 8079
+Accept-Encoding: gzip
+Content-Length: 0
+Connection: Keep-Alive
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9f7122 1682057000049964553 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422728-51168c9b20410c5e7b327f35
+Content-Length: 516
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057000043, 2023-04-21 06:03:20) */ * FROM (select order_date_grp order_date, sum(order_quantity) / count(distinct order_id) \"Average Basket Size\"\nfrom (select order_id, order_quantity, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_4yzo5ui8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682057000043\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9b9fb1a9 1682057001115440285 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422729-03756c6c3efbcb981b06b5d1
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057001111, 2023-04-21 06:03:21) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_4yzo5ui8.retail_stores_by_transaction) AS \"1682057001111\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ca641b9e0a01038c20f2a6af 1682057001175521524 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9b9fb98d 1682057001937619093 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-64422729-1407f0ee0fae84cf26926326
+Content-Length: 522
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057001933, 2023-04-21 06:03:21) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum(order_quantity) \"Average Unit Revenue\"\nfrom (select order_quantity, order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp\n    from default_4yzo5ui8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682057001933\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9ba00801 1682057002751875067 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442272a-7d64446e30f4b56d6a2cdfaf
+Content-Length: 282
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057002748, 2023-04-21 06:03:22) */ * FROM (select sum(order_net_profit) \"Net Profit\"\nfrom default_4yzo5ui8.retail_stores_by_transaction) AS \"1682057002748\"","forcedToPushDown":true}
+🐵🙈🙉
+1 53941b9e0a01027e8878378f 1682057003164108549 0
+GET /kylin HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: close
+User-Agent: ELB-HealthChecker/2.0
+Accept-Encoding: gzip, compressed
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9ba00fe1 1682057003493737421 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442272b-613436ac51fa52457351dec2
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057003489, 2023-04-21 06:03:23) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_4yzo5ui8.retail_stores_by_transaction) t) AS \"1682057003489\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9ba017c5 1682057004210696954 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442272c-1c9bcab57ab3efd818245683
+Content-Length: 580
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057004206, 2023-04-21 06:03:24) */ * FROM (select order_date_grp order_date, sum(order_net_profit) / sum($f14) \"Net Profit Margin\"\nfrom (select order_net_profit, cast(cast(floor(order_date to day) as varchar) as date) order_date_grp, item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f14\n    from default_4yzo5ui8.retail_stores_by_transaction) t\ngroup by order_date_grp\norder by order_date_grp desc) AS \"1682057004206\"","forcedToPushDown":true}
+🐵🙈🙉
+1 669c1b9e0a01027e9ba0690a 1682057004981126094 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442272c-62ee621e195fd13f278be58a
+Content-Length: 378
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057004977, 2023-04-21 06:03:24) */ * FROM (select sum($f13) \"Total Sales\"\nfrom (select item_unit_price * (coalesce(1, 0) - coalesce(item_discount, 0)) * order_quantity $f13\n    from default_4yzo5ui8.retail_stores_by_transaction) t) AS \"1682057004977\"","forcedToPushDown":true}
+🐵🙈🙉
+1 ba141b9e0a0102baf558712b 1682057005620570772 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 ba161b9e0a0102ba82404101 1682057005702777100 0
+GET /kylin/api/config/is_cloud HTTP/1.1
+Host: 10.1.2.167:7070
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/1.8.0_275)
+
+
+🐵🙈🙉
+1 669c1b9e0a01027e9ba070ee 1682057005748754959 0
+POST /kylin/api/query HTTP/1.1
+X-Forwarded-For: 10.8.11.36
+X-Forwarded-Proto: http
+X-Forwarded-Port: 7070
+Host: internal-lb-kc-zenengineqatdnq-1677005957.cn-northwest-1.elb.amazonaws.com.cn:7070
+X-Amzn-Trace-Id: Root=1-6442272d-77b9b80a20971aae0e01a985
+Content-Length: 293
+Accept: application/vnd.apache.kylin-v4+json
+Authorization: Basic YWRtaW46S1lMSU4=
+Content-Type: application/json;charset=utf-8
+Accept-Encoding: gzip
+User-Agent: okhttp/3.14.9
+
+{"project":"170912269532307458","limit":500,"offset":0,"sql":"SELECT  /*+ ACCEPT_CACHE_TIME(1682057005745, 2023-04-21 06:03:25) */ * FROM (select count(distinct order_id) \"Total Transactions\"\nfrom default_4yzo5ui8.retail_stores_by_transaction) AS \"1682057005745\"","forcedToPushDown":true}
+🐵🙈🙉
+1 a5e41b9e0a0102ba65679910 1682057006335139789 0
+GET /kylin/api/prometheus HTTP/1.1
+Host: 10.1.2.167:7070
+User-Agent: Prometheus/2.26.0
+Accept: application/openmetrics-text; version=0.0.1,text/plain;version=0.0.4;q=0.5,*/*;q=0.1
+Accept-Encoding: gzip
+X-Prometheus-Scrape-Timeout-Seconds: 10.000000
+
+
+🐵🙈🙉
