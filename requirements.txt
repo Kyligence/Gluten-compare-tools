@@ -1,0 +1,3 @@
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple retrying
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pymysql
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask
