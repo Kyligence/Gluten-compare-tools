@@ -36,5 +36,6 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 (': Object,not found', 'sql_object_not_found', 'unsolved'),
 ('s3: //,[OBJECT STORAGE Exception] Input path does not exist', 's3_path_not_found', 'unsolved'),
 ('[OBJECT STORAGE Exception],com.amazonaws.services.s3.model.AmazonS3Exception: Forbidden (Service: Amazon S3', 's3_access_forbidden', 'unsolved'),
-('KE-010001201: Can\'t find project', 'project_not_found', 'unsolved'),
-('[OBJECT STORAGE Exception] : Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Service: AWSSecurityTokenService,Error Code: AccessDenied', 'aws_access_denied', 'unsolved');
+('KE-010001201:,t find project', 'project_not_found', 'unsolved'),
+('[OBJECT STORAGE Exception] : Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Service: AWSSecurityTokenService,Error Code: AccessDenied', 'aws_access_denied', 'unsolved'),
+('[OBJECT STORAGE Exception] Table or view not found', 'table_view_not_found' ,'unsolved');
