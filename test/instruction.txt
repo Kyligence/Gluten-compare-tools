@@ -8,15 +8,17 @@ rpm -ivh mysql-community-common-8.0.33-1.el9.x86_64.rpm
 rpm -ivh mysql-community-client-plugins-8.0.33-1.el9.x86_64.rpm
 rpm -ivh mysql-community-libs-8.0.33-1.el9.x86_64.rpm
 rpm -ivh mysql-community-client-8.0.33-1.el9.x86_64.rpm
-rpm -ivh mysql-community-server-8.0.33-1.el9.x86_64.rpm
 rpm -ivh mysql-community-icu-data-files-8.0.33-1.el9.x86_64.rpm
 rpm -ivh mysql-community-server-8.0.33-1.el9.x86_64.rpm
+
 
 
 /etc/my.cnf
 [mysqld]
 skip-grant-tables
 bind-address = 0.0.0.0
+
+mysql -h localhost -uroot
 
 update user set authentication_string = '' where user = 'root';
 ALTER USER USER() IDENTIFIED BY 'lHuang0928_7750';
