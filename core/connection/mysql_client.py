@@ -59,7 +59,7 @@ def insert_into_inconsistent_record(*args):
             params = args + (tag,)
             cur.execute(sql1, params)  # sql语句参数化，防止攻击！
             conn.commit()
-            cur.close()  # 关闭游标
+        cur.close()  # 关闭游标
     finally:
         conn.close()  # 关闭连接
 
@@ -81,6 +81,6 @@ def insert_into_response_time(*args):
             params = args
             cur.execute(sql, params)  # sql语句参数化，防止攻击！
             conn.commit()
-            cur.close()  # 关闭游标
+        cur.close()  # 关闭游标
     finally:
         conn.close()  # 关闭连接
