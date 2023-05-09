@@ -1,4 +1,5 @@
 import json
+import re
 
 from core.common import config
 from core.message.request_builder import RequestBuilder
@@ -16,7 +17,8 @@ class KERequestBuilder(RequestBuilder):
         pass
 
     def parse_source(self, source_message):
-        return source_message
+        parsed_sql = re.sub("/\*\+(.)+\*/", "", source_message['sql'])
+        return {"sql": parsed_sql, "project": source_message['project']}
 
     def build_forward_message(self, source_message_parsed):
         addition = {"Accept": "application/vnd.apache.kylin-v4+json", "Authorization": "Basic QURNSU46S1lMSU4=",
