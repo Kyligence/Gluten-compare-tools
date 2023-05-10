@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
             sql2 = "delete from compare_tools.inconsistent_record " \
                    "where tag='unrecognized' and (normal_result like 'The query exceeds the set time limit%' " \
-                   "or normal_result like '[OBJECT STORAGE Exception]  Could not execute broadcast in%')"
+                   "or normal_result like '[OBJECT STORAGE Exception]%')"
             cur.execute(sql2)
             conn.commit()
             cur.close()
