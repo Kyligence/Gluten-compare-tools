@@ -47,4 +47,4 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Executor heartbeat timed out after', 'executor_heartbeat_time_out' ,'unsolved'),
 ('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to get database object', 'metadata_unable_to_get_database_object' ,'unsolved'),
 ('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to fetch table', 'metadata_unable_to_fetch_table' ,'unsolved'),
-
+('KE-010003208: Invalid username or password', 'invalid_username_or_password' ,'unsolved'),
