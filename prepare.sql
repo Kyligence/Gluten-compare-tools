@@ -1,7 +1,7 @@
 create database compare_tools;
-use compare_tools;
+--use compare_tools;
 
-CREATE TABLE inconsistent_record (
+CREATE TABLE compare_tools.inconsistent_record (
 id bigint(20) NOT NULL AUTO_INCREMENT,
 project  text CHARACTER SET utf8 NOT NULL,
 query text CHARACTER SET utf8 NOT NULL,
@@ -12,7 +12,7 @@ createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMEST
 PRIMARY KEY (id)
 );
 
-CREATE TABLE response_time (
+CREATE TABLE compare_tools.response_time (
 id bigint(20) NOT NULL AUTO_INCREMENT,
 project  text CHARACTER SET utf8 NOT NULL,
 query text CHARACTER SET utf8 NOT NULL,
@@ -22,7 +22,7 @@ createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMEST
 PRIMARY KEY (id)
 );
 
-CREATE TABLE error_category (
+CREATE TABLE compare_tools.error_category (
 id bigint(20) NOT NULL AUTO_INCREMENT,
 keywords  text CHARACTER SET utf8 NOT NULL,
 tag text CHARACTER SET utf8 NOT NULL,
@@ -31,7 +31,7 @@ createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMEST
 PRIMARY KEY (id)
 );
 
-insert into error_category(keywords,tag,status)
+insert into compare_tools.error_category(keywords,tag,status)
 values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 (': Object,not found', 'sql_object_not_found', 'unsolved'),
 ('s3: //,[OBJECT STORAGE Exception] Input path does not exist', 's3_path_not_found', 'unsolved'),
@@ -44,5 +44,7 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('Illegal use of,NULL', 'Illegal_use_of_null' ,'unsolved'),
 ('The query exceeds the set time limit', 'time_out' ,'unsolved'),
 ('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Remote RPC client disassociated', 'executor_lost' ,'unsolved'),
-('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Executor heartbeat timed out after', 'executor_heartbeat_time_out' ,'unsolved');
+('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Executor heartbeat timed out after', 'executor_heartbeat_time_out' ,'unsolved'),
+('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to get database object', 'metadata_unable_to_get_database_object' ,'unsolved'),
+('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to fetch table', 'metadata_unable_to_fetch_table' ,'unsolved'),
 
