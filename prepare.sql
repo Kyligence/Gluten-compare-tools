@@ -39,6 +39,10 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('KE-010001201:,t find project', 'project_not_found', 'unsolved'),
 ('[OBJECT STORAGE Exception] : Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Service: AWSSecurityTokenService,Error Code: AccessDenied', 'aws_access_denied', 'unsolved'),
 ('[OBJECT STORAGE Exception] Table or view not found', 'table_view_not_found' ,'unsolved'),
-('Column,not found in any table', 'column_not_found' ,'unsolved'),
-('Cannot apply,FLOOR,to arguments of type', 'floor_args_error' ,'unsolved');
+('Column,not found in', 'column_not_found' ,'unsolved'),
+('Cannot apply,FLOOR,to arguments of type', 'floor_args_error' ,'unsolved'),
+('Illegal use of,NULL', 'Illegal_use_of_null' ,'unsolved'),
+('The query exceeds the set time limit', 'time_out' ,'unsolved'),
+('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Remote RPC client disassociated', 'executor_lost' ,'unsolved'),
+('OBJECT STORAGE Exception,ExecutorLostFailure,Job aborted due to stage failure,Executor heartbeat timed out after', 'executor_heartbeat_time_out' ,'unsolved');
 
