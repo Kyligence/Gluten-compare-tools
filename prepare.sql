@@ -48,3 +48,7 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to get database object', 'metadata_unable_to_get_database_object' ,'unsolved'),
 ('OBJECT STORAGE Exception,org.apache.hadoop.hive.ql.metadata.HiveException,Unable to fetch table', 'metadata_unable_to_fetch_table' ,'unsolved'),
 ('KE-010003208: Invalid username or password', 'invalid_username_or_password' ,'unsolved'),
+('OBJECT STORAGE Exception,java.lang.InterruptedException', 'object_storage_interrupted_exception' ,'unsolved'),
+('[OBJECT STORAGE Exception] initializing  on s3', 'object_storage_s3_initializing_exception' ,'unsolved'),
+('[OBJECT STORAGE Exception] Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Interrupted waiting to refresh the value', 'object_storage_s3_credential_refresh_interrupted' ,'unsolved'),
+
