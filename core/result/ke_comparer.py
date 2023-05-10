@@ -73,13 +73,8 @@ class KEComparer(Comparer):
                 standards_results.results[i].response_time
 
         if not is_consistent(standards_results.query["sql"], gluten_result, normal_result, any_exception):
-            # write_csv("./inconsistent_record.csv", "problem query:" + standards_results.query["sql"],
-            #           "gluten_result:" + gluten_result, "normal_result:" + normal_result)
             insert_into_inconsistent_record(standards_results.query["project"], standards_results.query["sql"],
-                                            gluten_result, normal_result)
+                                            str(gluten_result), str(normal_result))
         else:
-            # write_csv("./response_time.csv", "query:" + standards_results.query["sql"],
-            #           "gluten_res_time:" + str(res_time_dict["gluten_res_time"]),
-            #           "normal_res_time:" + str(res_time_dict["normal_res_time"]))
             insert_into_response_time(standards_results.query["project"], standards_results.query["sql"],
                                       int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]))

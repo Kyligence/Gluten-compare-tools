@@ -21,7 +21,9 @@ bind-address = 0.0.0.0
 mysql -h localhost -uroot
 
 update user set authentication_string = '' where user = 'root';
+
 ALTER USER USER() IDENTIFIED BY 'lHuang0928_7750';
+flush privileges;
 
 # start compare service
 python3 main.py
