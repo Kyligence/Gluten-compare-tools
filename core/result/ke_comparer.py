@@ -35,9 +35,19 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
         normal_result = to_sorted_string(normal_original_result)
         if gluten_result == normal_result:
             return True
-        else:
+        elif len(gluten_original_result) == 1 and len(gluten_original_result[0]) == 1:
             # find the first different column value and check out if is precision problem
-
+            # process the simplest case here for zen,only one row and one column result
+            try:
+                gluten_result_float = float(gluten_original_result[0][0])
+                normal_result_float = float(normal_original_result[0][0])
+                if abs(gluten_result_float-normal_result_float)/abs(gluten_result_float) < 0.0001:
+                    return True
+                else:
+                    return False
+            except ValueError:
+                return False
+        else:
             return False
     else:
         return to_trans_string(gluten_original_result) == to_string(normal_original_result)
