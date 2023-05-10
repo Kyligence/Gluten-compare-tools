@@ -38,4 +38,7 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('[OBJECT STORAGE Exception],com.amazonaws.services.s3.model.AmazonS3Exception: Forbidden (Service: Amazon S3', 's3_access_forbidden', 'unsolved'),
 ('KE-010001201:,t find project', 'project_not_found', 'unsolved'),
 ('[OBJECT STORAGE Exception] : Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Service: AWSSecurityTokenService,Error Code: AccessDenied', 'aws_access_denied', 'unsolved'),
-('[OBJECT STORAGE Exception] Table or view not found', 'table_view_not_found' ,'unsolved');
+('[OBJECT STORAGE Exception] Table or view not found', 'table_view_not_found' ,'unsolved'),
+('Column,not found in any table', 'column_not_found' ,'unsolved'),
+('Cannot apply,FLOOR,to arguments of type', 'floor_args_error' ,'unsolved');
+
