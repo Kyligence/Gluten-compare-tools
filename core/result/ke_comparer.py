@@ -30,7 +30,10 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
     if any_exception:
         return False
 
-    if str(gluten_original_result) == str(normal_original_result):
+    if to_string(gluten_original_result) == to_string(normal_original_result):
+        return True
+
+    if to_sorted_string(gluten_original_result) == to_sorted_string(normal_original_result):
         return True
 
     if query.lower().find("order by") == -1:
