@@ -85,6 +85,7 @@ class KEComparer(Comparer):
                     gluten_result = standards_results.results[i].exception
                 elif standards_results.results[i].dest["tag"] == "normal":
                     normal_result = standards_results.results[i].exception
+                    return
             res_time_dict[standards_results.results[i].dest["tag"] + "_res_time"] = \
                 standards_results.results[i].response_time
 
