@@ -51,7 +51,9 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('OBJECT STORAGE Exception,java.lang.InterruptedException', 'object_storage_interrupted_exception' ,'unsolved'),
 ('[OBJECT STORAGE Exception] initializing  on s3', 'object_storage_s3_initializing_exception' ,'unsolved'),
 ('[OBJECT STORAGE Exception] Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,Interrupted waiting to refresh the value', 'object_storage_s3_credential_refresh_interrupted' ,'unsolved'),
-('KE-010024001,have access', 'user_cannot_access' ,'unsolved');
-
+('KE-010024001,have access', 'user_cannot_access' ,'unsolved'),
+('Logic error', 'logic_error' ,'unsolved'),
+('Illegal type Date32 of argument for aggregate function sum', 'date32_aggregate_error' ,'unsolved'),
+('Cannot create enum from null value', 'create_enum_from_null_value' ,'unsolved'),
 
 
