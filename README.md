@@ -32,7 +32,7 @@ To be done
 
 `core/connection/mysql_client.py: config mysql connection info in param`
 
-`core/common/config.py: config DEST_URLS for your own path`
+`core/common/config.py: config DEST_URLS for your own path. also you can set request_builder,response_parser and comparer class with your own logic here`
 
 5 run
 
