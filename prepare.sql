@@ -55,5 +55,8 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('Logic error', 'logic_error' ,'unsolved'),
 ('Illegal type Date32 of argument for aggregate function sum', 'date32_aggregate_error' ,'unsolved'),
 ('Cannot create enum from null value', 'create_enum_from_null_value' ,'unsolved'),
+('[OBJECT STORAGE Exception] getFileStatus on s3', 'get_s3_file_status_error' ,'unsolved'),
+('[OBJECT STORAGE Exception] Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,com.amazonaws.AbortedException', 's3_access_aborted' ,'unsolved');
+
 
 
