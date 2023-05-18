@@ -1,4 +1,4 @@
-# mysql
+# need a mysql
 https://www.myfreax.com/how-to-install-mysql-on-ubuntu-20-04/
 
 setup on aws linux
