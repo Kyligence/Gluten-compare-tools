@@ -8,6 +8,7 @@ class StandardResult(object):
         self.response_time = 0
         self.content = ""
         self.exception = ""
+        self.if_fallback = False
 
 
 class StandardResults(object):

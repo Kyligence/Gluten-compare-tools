@@ -69,7 +69,7 @@ class KEComparer(Comparer):
         gluten_result = ""
         normal_result = ""
         res_time_dict = {"gluten_res_time": 0, "normal_res_time": 0}
-
+        if_fallback = False
         any_exception = False
 
         for i in range(0, len(standards_results.results)):
@@ -77,6 +77,7 @@ class KEComparer(Comparer):
             if standards_results.results[i].exception is None:
                 if standards_results.results[i].dest["tag"] == "gluten":
                     gluten_result = standards_results.results[i].content
+                    if_fallback = standards_results.results[i].if_fallback
                 elif standards_results.results[i].dest["tag"] == "normal":
                     normal_result = standards_results.results[i].content
             else:
@@ -94,4 +95,5 @@ class KEComparer(Comparer):
                                             str(gluten_result), str(normal_result))
         else:
             insert_into_response_time(standards_results.query["project"], standards_results.query["sql"],
-                                      int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]))
+                                      int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]),
+                                      int(if_fallback))

@@ -23,6 +23,7 @@ class KEResponseParser(ResponseParser):
                 standard_result.response_time = result_dict["data"]["duration"]  # to do
                 standard_result.content = result_dict["data"]["results"]
                 standard_result.exception = result_dict["data"]["exceptionMessage"]
+                standard_result.if_fallback = result_dict["data"]["glutenFallback"]
             else:
                 standard_result.response_time = -1
                 standard_result.content = None

@@ -70,6 +70,7 @@ def insert_into_inconsistent_record(*args):
 # query text CHARACTER SET utf8 NOT NULL,
 # gluten_res_time bigint,
 # normal_res_time bigint,
+# if_fallback BOOLEAN,
 # createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 # PRIMARY KEY (id)
 # );
@@ -77,7 +78,8 @@ def insert_into_response_time(*args):
     conn = pymysql.connect(**param)  # 连接对象
     try:
         with conn.cursor() as cur:  # 游标对象，采用默认的数据格式
-            sql = "insert into response_time(project,query,gluten_res_time,normal_res_time) values(%s, %s, %s, %s)"
+            sql = "insert into response_time(project,query,gluten_res_time,normal_res_time,if_fallback) " \
+                  "values(%s, %s, %s, %s, %s)"
             params = args
             cur.execute(sql, params)  # sql语句参数化，防止攻击！
             conn.commit()

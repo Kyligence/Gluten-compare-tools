@@ -18,6 +18,7 @@ project  text CHARACTER SET utf8 NOT NULL,
 query text CHARACTER SET utf8 NOT NULL,
 gluten_res_time bigint,
 normal_res_time bigint,
+if_fallback BOOLEAN,
 createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (id)
 );
