@@ -57,7 +57,13 @@ values('SELECT /*+,OBJECT STORAGE Exception', 'comment_analyze', 'unsolved'),
 ('Illegal type Date32 of argument for aggregate function sum', 'date32_aggregate_error' ,'unsolved'),
 ('Cannot create enum from null value', 'create_enum_from_null_value' ,'unsolved'),
 ('[OBJECT STORAGE Exception] getFileStatus on s3', 'get_s3_file_status_error' ,'unsolved'),
-('[OBJECT STORAGE Exception] Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,com.amazonaws.AbortedException', 's3_access_aborted' ,'unsolved');
-
+('[OBJECT STORAGE Exception] Instantiate org.apache.hadoop.fs.s3a.auth.AssumedRoleCredentialProvider,com.amazonaws.AbortedException', 's3_access_aborted' ,'unsolved'),
+('datasources.v2.text.TextScan', 'textscan_init_no_such_method' ,'unsolved'),
+('Bad URI syntax', 'bad_uri_syntax' ,'unsolved'),
+('Expected end of line', 'expected_end_of_line' ,'unsolved'),
+('Unexpected empty column', 'unexpected_empty_column' ,'unsolved'),
+('Cannot parse CSV format', 'csv_parse_error' ,'unsolved'),
+('Cannot parse input', 'cannot_parse_input' ,'unsolved'),
+('Failed to get object info,No response body', 'no_response_body' ,'unsolved'),
 
 
