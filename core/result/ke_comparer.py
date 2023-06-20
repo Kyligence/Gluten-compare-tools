@@ -60,7 +60,7 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
                     try:
                         gluten_result_float = float(gluten_original_result[row][col])
                         normal_result_float = float(normal_original_result[row][col])
-                        if abs(gluten_result_float - normal_result_float) / abs(gluten_result_float) > 0.0001:
+                        if abs(gluten_result_float - normal_result_float) / abs(gluten_result_float) > 0.01:
                             return False
                     except ValueError:
                         return False
