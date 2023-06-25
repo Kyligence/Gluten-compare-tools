@@ -26,6 +26,9 @@ def to_trans_string(rows):
         [str(x).replace("None", "''").replace("'NaN'", "None").replace("'-Infinity'", "None") for x in rows])
 
 
+def compare_str(str1, str2):
+    return to_string(str1) == to_string(str2)
+
 def is_consistent(query, gluten_original_result, normal_original_result, any_exception, schema):
     if any_exception:
         return False
@@ -43,23 +46,24 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
     if to_sorted_string(gluten_original_result) == to_sorted_string(normal_original_result):
         return True
 
-    gluten_result = to_sorted_trans_string(gluten_original_result)
-    normal_result = to_sorted_string(normal_original_result)
-    if gluten_result == normal_result:
+    normal_result_sort = sorted(normal_original_result)
+    gluten_result_sort = sorted(gluten_original_result)
+
+    if compare_str(normal_result_sort, gluten_result_sort):
         return True
     else:
-        for row in range(0, len(normal_original_result)):
-            if to_string(gluten_original_result[row]) == to_string(normal_original_result[row]):
+        for row in range(0, len(normal_result_sort)):
+            if compare_str(gluten_result_sort[row], normal_result_sort[row]):
                 continue
 
             for col in range(0, len(schema)):
-                if to_string(gluten_original_result[row][col]) == to_string(normal_original_result[row][col]):
+                if compare_str(gluten_result_sort[row][col], normal_result_sort[row][col]):
                     continue
 
                 if schema[col].is_float:
                     try:
-                        gluten_result_float = float(gluten_original_result[row][col])
-                        normal_result_float = float(normal_original_result[row][col])
+                        gluten_result_float = float(gluten_result_sort[row][col])
+                        normal_result_float = float(normal_result_sort[row][col])
                         if abs(gluten_result_float - normal_result_float) / abs(gluten_result_float) > 0.01:
                             return False
                     except ValueError:
