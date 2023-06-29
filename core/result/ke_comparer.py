@@ -2,7 +2,7 @@ import logging
 
 from core.common import config
 from core.common.writer import write_csv
-from core.connection.mysql_client import insert_into_inconsistent_record, insert_into_response_time
+from core.connection.mysql_client import insert_into_inconsistent_record, insert_into_response_time, insert_into_exception_record
 from core.result.comparer import Comparer
 
 log = config.log
@@ -88,9 +88,9 @@ class KEComparer(Comparer):
         if_fallback = False
         any_exception = False
         schema = None
+        normal_exception = False
 
         for i in range(0, len(standards_results.results)):
-
             if standards_results.results[i].exception is None:
                 if standards_results.results[i].dest["tag"] == "gluten":
                     gluten_result = standards_results.results[i].content
@@ -104,19 +104,22 @@ class KEComparer(Comparer):
                     gluten_result = standards_results.results[i].exception
                 elif standards_results.results[i].dest["tag"] == "normal":
                     normal_result = standards_results.results[i].exception
-                    return
+                    normal_exception = True
+
             res_time_dict[standards_results.results[i].dest["tag"] + "_res_time"] = \
                 standards_results.results[i].response_time
 
         consistent = is_consistent(standards_results.query["sql"], gluten_result, normal_result, any_exception, schema)
 
-        if self.insert_result:
-            if not consistent:
-                insert_into_inconsistent_record(standards_results.query["project"], standards_results.query["sql"],
-                                                str(gluten_result), str(normal_result))
-            else:
-                insert_into_response_time(standards_results.query["project"], standards_results.query["sql"],
-                                          int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]),
-                                          int(if_fallback))
+        if normal_exception:
+            insert_into_exception_record(standards_results.query["project"], standards_results.query["sql"],
+                                         str(gluten_result), str(normal_result))
+        elif not consistent:
+            insert_into_inconsistent_record(standards_results.query["project"], standards_results.query["sql"],
+                                            str(gluten_result), str(normal_result))
+        else:
+            insert_into_response_time(standards_results.query["project"], standards_results.query["sql"],
+                                      int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]),
+                                      int(if_fallback))
 
         return consistent
