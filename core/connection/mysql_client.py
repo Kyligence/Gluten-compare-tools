@@ -63,6 +63,15 @@ def insert_into_inconsistent_record(*args):
     finally:
         conn.close()  # 关闭连接
 
+def insert_into_exception_record(*args):
+    tag = "Internal_Server_Error"
+    with pymysql.connect(**param) as conn:
+        with conn.cursor() as cur:
+            sql1 = "insert into inconsistent_record(project,query,gluten_result,normal_result,tag) " \
+                   "values(%s, %s, %s, %s, %s)"
+            params = args + (tag,)
+            cur.execute(sql1, params)
+        conn.commit()
 
 # CREATE TABLE response_time (
 # id bigint(20) NOT NULL AUTO_INCREMENT,
