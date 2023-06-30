@@ -1,53 +1,14 @@
-from abc import abstractmethod
-
 from core.message.response_parser import ResponseParser, StandardResults, StandardResult, Schema
-from enum import Enum
 
-# copy from java.sql.Types
-class Types(Enum):
-    BIT = -7
-    TINYINT = -6
-    SMALLINT = 5
-    INTEGER = 4
-    BIGINT = -5
-    FLOAT = 6
-    REAL = 7
-    DOUBLE = 8
-    NUMERIC = 2
-    DECIMAL = 3
-    CHAR = 1
-    VARCHAR = 12
-    LONGVARCHAR = -1
-    DATE = 91
-    TIME = 92
-    TIMESTAMP = 93
-    BINARY = -2
-    VARBINARY = -3
-    LONGVARBINARY = -4
-    NULL = 0
-    OTHER = 1111
-    JAVA_OBJECT = 2000
-    DISTINCT = 2001
-    STRUCT = 2002
-    ARRAY = 2003
-    BLOB = 2004
-    CLOB = 2005
-    REF = 2006
-    DATALINK = 70
-    BOOLEAN = 16
-    ROWID = -8
-    NCHAR = -15
-    NVARCHAR = -9
-    LONGNVARCHAR = -16
-    NCLOB = 2011
-    SQLXML = 2009
-    REF_CURSOR = 2012
-    TIME_WITH_TIMEZONE = 2013
-    TIMESTAMP_WITH_TIMEZONE = 2014
+from src.entry.types import Types
 
 
 def parse_schema_meta(column_metas):
     schemas = []
+
+    if column_metas is None:
+        return schemas
+
     for i in range(0, len(column_metas)):
         column_meta = column_metas[i]
         is_float = False
@@ -57,7 +18,6 @@ def parse_schema_meta(column_metas):
         schemas.append(Schema(column_meta["name"], is_float))
 
     return schemas
-
 
 
 class KEResponseParser(ResponseParser):
@@ -93,7 +53,6 @@ class KEResponseParser(ResponseParser):
 
         return standard_results
 
-
 #     @retry(stop_max_attempt_number=10, wait_fixed=1000 * 2 * 60)
 #     def send(self, urls, source_message_prepared, addition):
 #         results = {"source_message": source_message_prepared, "addition": addition, "results": []}
@@ -102,7 +61,7 @@ class KEResponseParser(ResponseParser):
 #             # cal time here??
 #             response = requests.post(urls[i]["url"], json=source_message_prepared, headers=addition)
 #             result_json = response.content.decode("utf-8")
-#             results["results"].append({"dest_url": urls[i], "result": json.loads(result_json)})
+#             results["results"].append({"dest_url": urls[i], "result.py": json.loads(result_json)})
 #
 #         return results
 #

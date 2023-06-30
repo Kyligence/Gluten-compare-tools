@@ -2,7 +2,8 @@ import logging
 
 from core.common import config
 from core.common.writer import write_csv
-from core.connection.mysql_client import insert_into_inconsistent_record, insert_into_response_time, insert_into_exception_record
+from core.connection.mysql_client import insert_into_inconsistent_record, insert_into_response_time, \
+    insert_into_exception_record
 from core.result.comparer import Comparer
 
 log = config.log
@@ -27,10 +28,37 @@ def to_trans_string(rows):
 
 
 def compare_str(str1, str2):
+    if str1 == str2:
+        return True
+
+    if str1 is None or str2 is None:
+        return False
+
     return to_string(str1) == to_string(str2)
+
+
+def custom_sort(value):
+    if value is None:
+        return 'NULL'
+
+    v = []
+    for i in range(0, len(value)):
+        if value[i] is None:
+            v.append("NULL")
+        else:
+            v.append(value[i])
+
+    return str(v)
+
 
 def is_consistent(query, gluten_original_result, normal_original_result, any_exception, schema):
     if any_exception:
+        return False
+
+    if gluten_original_result is None and normal_original_result is None:
+        return True
+
+    if gluten_original_result is None or normal_original_result is None:
         return False
 
     if len(gluten_original_result) != len(normal_original_result):
@@ -40,14 +68,11 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
                                              or len(schema) != len(normal_original_result[0])):
         return False
 
-    if to_string(gluten_original_result) == to_string(normal_original_result):
+    if compare_str(gluten_original_result, normal_original_result):
         return True
 
-    if to_sorted_string(gluten_original_result) == to_sorted_string(normal_original_result):
-        return True
-
-    normal_result_sort = sorted(normal_original_result)
-    gluten_result_sort = sorted(gluten_original_result)
+    normal_result_sort = sorted(normal_original_result, key=custom_sort)
+    gluten_result_sort = sorted(gluten_original_result, key=custom_sort)
 
     if compare_str(normal_result_sort, gluten_result_sort):
         return True
@@ -57,16 +82,19 @@ def is_consistent(query, gluten_original_result, normal_original_result, any_exc
                 continue
 
             for col in range(0, len(schema)):
-                if compare_str(gluten_result_sort[row][col], normal_result_sort[row][col]):
+                if gluten_result_sort[row][col] == normal_result_sort[row][col]:
                     continue
 
                 if schema[col].is_float:
                     try:
+                        if gluten_result_sort[row][col] is None or normal_result_sort[row][col] is None:
+                            return False
+
                         gluten_result_float = float(gluten_result_sort[row][col])
                         normal_result_float = float(normal_result_sort[row][col])
                         if abs(gluten_result_float - normal_result_float) / abs(gluten_result_float) > 0.01:
                             return False
-                    except ValueError:
+                    except Exception as e:
                         return False
                 else:
                     return False
@@ -111,6 +139,9 @@ class KEComparer(Comparer):
 
         consistent = is_consistent(standards_results.query["sql"], gluten_result, normal_result, any_exception, schema)
 
+        if not self.insert_result:
+            return consistent
+
         if normal_exception:
             insert_into_exception_record(standards_results.query["project"], standards_results.query["sql"],
                                          str(gluten_result), str(normal_result))
@@ -118,6 +149,9 @@ class KEComparer(Comparer):
             insert_into_inconsistent_record(standards_results.query["project"], standards_results.query["sql"],
                                             str(gluten_result), str(normal_result))
         else:
+            if if_fallback is None:
+                if_fallback = True
+
             insert_into_response_time(standards_results.query["project"], standards_results.query["sql"],
                                       int(res_time_dict["gluten_res_time"]), int(res_time_dict["normal_res_time"]),
                                       int(if_fallback))
