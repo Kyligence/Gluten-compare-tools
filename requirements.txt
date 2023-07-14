@@ -5,3 +5,4 @@ flask~=2.2.2
 redis~=4.6.0
 
 requests~=2.25.1
+locust==2.15.1
