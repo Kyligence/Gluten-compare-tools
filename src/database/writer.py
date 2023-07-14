@@ -50,8 +50,7 @@ class CsvWriter(CsvAction):
             file_name = file_name + ".csv"
 
         with open(self.file_dir + os.sep + file_name, "a", newline='') as f:
-            writer = csv.writer(f, delimiter=self.delimiter, quotechar=self.quote_char, quoting=self.quoting)
-            writer.writerow(result)
+            f.write(result + "\n")
 
         return True
 
