@@ -9,16 +9,6 @@ from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
 from src.entry.response import Response, StandardResult, GoreplayReceive
 
-# def collect_summary():
-#
-#
-#
-#
-#     with open(file_dir + os.sep + file_name, "a", newline='') as f:
-#         writer = csv.writer(f, delimiter=super().delimiter, quotechar=super().quote_char, quoting=super().quoting)
-#         writer.writerow(result.to_csv_format())
-
-# TODO fallback统计
 # TODO index统计
 
 parser = argparse.ArgumentParser(description='command line arguments')

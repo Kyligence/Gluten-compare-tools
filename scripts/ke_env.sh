@@ -6,7 +6,7 @@ export COMPARE_USER=
 export COMPARE_KE_SERVER=
 export COMPARE_KE_WORKER=
 export S3_PACKAGE_PRE=
-
+export GOREPLAY_DATA_PATH=
 
 
 
