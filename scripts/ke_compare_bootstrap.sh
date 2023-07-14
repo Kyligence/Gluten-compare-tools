@@ -14,14 +14,13 @@ base_dir=$(
 )
 tmp_dir=${base_dir}/tmp
 mkdir -p "$tmp_dir"
-echo "$base_dir"
 
 source "${base_dir}"/ke_env.sh
 source "${base_dir}"/common/aws-instance.sh
 
 s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-amzn2023-x86_64.tar.gz
 ## update compare code
-cd ..
+cd "${base_dir}"/.. || return
 
 sudo git stash
 sudo git fetch origin
@@ -29,7 +28,7 @@ sudo git checkout origin/main
 sudo git stash pop
 
 ## install python requirements.txt
-pip3 install -r "${base_dir}"/requirements.txt
+pip3 install -r "${base_dir}"/../requirements.txt
 
 cd "${base_dir}" || return
 
