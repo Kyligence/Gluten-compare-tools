@@ -5,8 +5,8 @@ CREATE TABLE compare_tools.inconsistent_record (
 id bigint(20) NOT NULL AUTO_INCREMENT,
 project  text CHARACTER SET utf8 NOT NULL,
 query text CHARACTER SET utf8 NOT NULL,
-gluten_result text CHARACTER SET utf8 NOT NULL,
-normal_result text CHARACTER SET utf8 NOT NULL,
+gluten_result mediumtext CHARACTER SET utf8 NOT NULL,
+normal_result mediumtext CHARACTER SET utf8 NOT NULL,
 tag text CHARACTER SET utf8 NOT NULL,
 createtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (id)

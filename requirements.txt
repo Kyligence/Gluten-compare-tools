@@ -1,5 +1,7 @@
 
 retrying
-pymysql
-flask
+pymysql~=1.0.2
+flask~=2.2.2
+redis~=4.6.0
 
+requests~=2.25.1
