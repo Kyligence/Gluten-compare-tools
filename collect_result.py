@@ -170,17 +170,11 @@ def collect(bt: str):
             replay.message = res.source_message
             error_backup.insert(key, replay)
 
-    writer.insert_text("SUMMARY", "Total: %d".format(summary.total))
-    writer.insert_text("SUMMARY", "Duration: %s".format(summary.duration))
-
-    writer.insert_text("SUMMARY", "".format())
-    writer.insert_text("SUMMARY", "".format())
-    writer.insert_text("SUMMARY", "".format())
-    writer.insert_text("SUMMARY", "".format())
-    writer.insert_text("SUMMARY", "".format())
+    writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
+    writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
 
     for key in summary.group.keys():
-        writer.insert_text("SUMMARY", "%s: %d".format(key, summary.group.get(key).total))
+        writer.insert_text("SUMMARY", "{}: {}".format(key, summary.group.get(key).total))
 
 
 if __name__ == '__main__':

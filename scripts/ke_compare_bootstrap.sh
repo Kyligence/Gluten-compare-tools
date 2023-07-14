@@ -58,8 +58,10 @@ scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}
 ## restart ke
 echo "Start KE"
 ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl restart kylin"
+echo "Starting KE"
 sleep 300
 
 ## Begin compare with double run
 echo "Begin compare"
 python3 "${base_dir}"/../begin_compare.py --process 15 --date "$dt" --batch "$task_id" --mod "$mod"
+echo "End compare"
