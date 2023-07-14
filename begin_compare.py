@@ -75,10 +75,10 @@ def prepare_redis_data(batch_name: str, dt: str, m: str) -> bool:
         w.insert_goreplay(redis_config["key_name"], value.to_redis_format())
 
     if m == "error":
-        reader = CsvReader(csv_config["error_backup"] + os.sep + dt)
+        reader = CsvReader(csv_config["backup"] + os.sep + dt)
 
         for file in os.listdir(reader.file_dir):
-            if file.endswith(".csv") and file != "NOT_FOUND.csv":
+            if file.endswith(".csv") and file != "NOT_FOUND.csv" and file != "SUCCESS.csv":
                 result = GoreplayReceive()
                 res = reader.read_to_other(file, result, read_to_redis)
 

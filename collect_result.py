@@ -127,7 +127,7 @@ def do_summary(res: Response):
 
             summary.duration[i] = summary.duration[i] + res.others[i].response_time
 
-        statistic_tag_not_response("SUCCESS")
+        statistic_tag("SUCCESS", res)
         fallback_or_index(res)
         return
 
@@ -149,7 +149,7 @@ def do_summary(res: Response):
 
 def pre_collect(bt: str):
     clean_dirs(csv_config["compare_result"] + os.sep + bt)
-    clean_dirs(csv_config["error_backup"] + os.sep + bt)
+    clean_dirs(csv_config["backup"] + os.sep + bt)
 
 
 def collect(bt: str):
@@ -161,14 +161,14 @@ def collect(bt: str):
             reader.read_to_other(file, Response(), do_summary)
 
     writer = CsvWriter(csv_config["compare_result"] + os.sep + bt)
-    error_backup = CsvWriter(csv_config["error_backup"] + os.sep + bt)
+    backup = CsvWriter(csv_config["backup"] + os.sep + bt)
 
     for key in summary.group.keys():
         for res in summary.group[key].details:
             writer.insert(key, res)
             replay = GoreplayReceive()
             replay.message = res.source_message
-            error_backup.insert(key, replay)
+            backup.insert(key, replay)
 
     writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
     writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
