@@ -22,14 +22,16 @@ source "${base_dir}"/common/aws-instance.sh
 s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-amzn2023-x86_64.tar.gz
 ## update compare code
 cd ..
-git stash
-git fetch origin
-git checkout origin/main
-git stash pop
-cd "${base_dir}" || return
+
+sudo git stash
+sudo git fetch origin
+sudo git checkout origin/main
+sudo git stash pop
 
 ## install python requirements.txt
 pip3 install -r "${base_dir}"/requirements.txt
+
+cd "${base_dir}" || return
 
 ## Start Env
 manager_instance start "$COMPARE_INSTANCE_IDS"
