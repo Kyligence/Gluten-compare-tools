@@ -16,6 +16,8 @@ parser.add_argument('--batch', type=str,
                     help='The execute id.', required=True,
                     default="")
 
+compare_result_writer: CsvWriter
+backup: CsvWriter
 summary: KECompareResultSummary = KECompareResultSummary()
 
 
@@ -32,8 +34,10 @@ def statistic_tag(tag: str, res: Response):
     statistic_tag_not_response(tag)
 
     if tag not in NOT_SAVE_RECORD_SET:
-        item = summary.group[tag]
-        item.details.append(res)
+        compare_result_writer.insert(tag, res)
+        replay = GoreplayReceive()
+        replay.message = res.source_message
+        backup.insert(tag, replay)
 
     return
 
@@ -151,27 +155,21 @@ def pre_collect(bt: str):
 
 def collect(bt: str):
     pre_collect(bt)
+    global compare_result_writer, backup
+    compare_result_writer = CsvWriter(csv_config["compare_result"] + os.sep + bt)
+    backup = CsvWriter(csv_config["backup"] + os.sep + bt)
+
     reader = CsvReader(csv_config["server_result"] + os.sep + bt)
 
     for file in os.listdir(reader.file_dir):
         if file.endswith(".csv"):
             reader.read_to_other(file, Response(), do_summary)
 
-    writer = CsvWriter(csv_config["compare_result"] + os.sep + bt)
-    backup = CsvWriter(csv_config["backup"] + os.sep + bt)
+    compare_result_writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
+    compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
 
     for key in summary.group.keys():
-        for res in summary.group[key].details:
-            writer.insert(key, res)
-            replay = GoreplayReceive()
-            replay.message = res.source_message
-            backup.insert(key, replay)
-
-    writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
-    writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
-
-    for key in summary.group.keys():
-        writer.insert_text("SUMMARY", "{}: {}".format(key, summary.group.get(key).total))
+        compare_result_writer.insert_text("SUMMARY", "{}: {}".format(key, summary.group.get(key).total))
 
 
 if __name__ == '__main__':
