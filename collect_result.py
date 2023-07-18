@@ -3,7 +3,7 @@ import os
 from typing import List
 
 import src.compare.compare as compare
-from config import csv_config, tags
+from config import csv_config, tags, NOT_SAVE_RECORD_SET
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
@@ -31,8 +31,10 @@ def statistic_tag_not_response(tag: str):
 def statistic_tag(tag: str, res: Response):
     statistic_tag_not_response(tag)
 
-    item = summary.group[tag]
-    item.details.append(res)
+    if tag not in NOT_SAVE_RECORD_SET:
+        item = summary.group[tag]
+        item.details.append(res)
+
     return
 
 
@@ -103,6 +105,11 @@ def do_exception(others: List[StandardResult], res: Response):
                 if other.exception.find(t[0]) != -1:
                     statistic_tag(t[1], res)
                     return
+
+    if len(others) > 1:
+        query_failed_others(res)
+
+    return
 
 
 def do_summary(res: Response):

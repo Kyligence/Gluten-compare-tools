@@ -38,10 +38,17 @@ ke_config = {
     ]  # The 1st is base line, and others is compare line.
 }
 
+TAGS_LABEL_NOT_FOUND = "NOT_FOUND"
+TAGS_LABEL_SQL_ERROR = "SQL_ERROR"
+
+NOT_SAVE_RECORD_SET: set = {
+    TAGS_LABEL_NOT_FOUND, TAGS_LABEL_SQL_ERROR
+}
+
 tags: (str, str) = {
-    "find project": "NOT_FOUND",
-    "not found": "NOT_FOUND",
-    "Illegal use of": "SQL_ERROR",
-    "Was expecting one of": "SQL_ERROR",
+    "find project": TAGS_LABEL_NOT_FOUND,
+    "not found": TAGS_LABEL_NOT_FOUND,
+    "Illegal use of": TAGS_LABEL_SQL_ERROR,
+    "Was expecting one of": TAGS_LABEL_SQL_ERROR,
     "OBJECT STORAGE Exception": "S3_ERROR"
 }
