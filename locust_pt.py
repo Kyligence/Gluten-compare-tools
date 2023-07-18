@@ -46,10 +46,10 @@ def add_row_to_arr(value: CsvFormat):
 
 RequestsArr = []
 # reader = CsvReader("/home/admin123/PycharmProjects/compareTools/test")
-reader = CsvReader(csv_config["pt_source_parent_dir"] + os.sep + csv_config["pt_source_file"])
+reader = CsvReader(csv_config["pt_source_parent_dir"])
 
 result = GoreplayReceive()
-reader.read_to_other("test01.csv", result, add_row_to_arr)
+reader.read_to_other("SUCCESS.csv", result, add_row_to_arr)
 
 if __name__ == '__main__':
     import os
