@@ -49,7 +49,7 @@ RequestsArr = []
 reader = CsvReader(csv_config["pt_source_parent_dir"])
 
 result = GoreplayReceive()
-reader.read_to_other("SUCCESS.csv", result, add_row_to_arr)
+reader.read_to_other(csv_config["pt_source_file"], result, add_row_to_arr)
 
 if __name__ == '__main__':
     import os
