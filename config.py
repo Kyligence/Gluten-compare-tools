@@ -15,7 +15,9 @@ csv_config = {
     'goreplay_data_dir_name': "goreplay",
     'server_result': "server_result",
     'compare_result': "result",
-    'backup': "backup"
+    'backup': "backup",
+    'pt_source_parent_dir': "pt_source_parent_dir",
+    'pt_source_file': "pt_source_file",
 }
 
 mysql_config = {

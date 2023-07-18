@@ -1,10 +1,11 @@
+import os
 import json
 import random
 
 from locust import TaskSet, task, between
 from locust import FastHttpUser
-import ast
 
+from config import csv_config
 from src.database.reader import CsvReader
 from src.entry.csv_format import CsvFormat
 from src.entry.response import GoreplayReceive
@@ -25,7 +26,6 @@ class KETaskSet(TaskSet):
 
     @task(1)
     def query(self):
-        # print(random.choice(RequestsArr))
         payload = json.loads(random.choice(RequestsArr))
         # payload = {"sql": "select 1", "project": "hltest"}
 
@@ -45,7 +45,9 @@ def add_row_to_arr(value: CsvFormat):
 
 
 RequestsArr = []
-reader = CsvReader("/home/admin123/PycharmProjects/compareTools/test")
+# reader = CsvReader("/home/admin123/PycharmProjects/compareTools/test")
+reader = CsvReader(csv_config["pt_source_parent_dir"] + os.sep + csv_config["pt_source_file"])
+
 result = GoreplayReceive()
 reader.read_to_other("test01.csv", result, add_row_to_arr)
 
