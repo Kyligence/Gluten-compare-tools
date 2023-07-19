@@ -6,7 +6,7 @@ import pandas as pd
 
 import src.compare.compare as compare
 from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TAGS_LABEL_SUCCESS, \
-    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20, TAGS_LABEL_DIFF_200
+    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20, TAGS_LABEL_DIFF_200, TAGS_LABEL_DIFF_TIME
 from config import csv_config, tags
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
@@ -44,6 +44,14 @@ def statistic_tag(tag: str, res: Response):
         replay = GoreplayReceive()
         replay.message = res.source_message
         backup.insert(tag, replay)
+
+        if tag == TAGS_LABEL_DIFF_TIME:
+            tt: list = []
+
+            for o in res.others:
+                tt.append(o.response_time)
+
+            backup.insert_text(TAGS_LABEL_DIFF_TIME, str(tt))
 
     return
 
@@ -145,11 +153,10 @@ def do_summary(res: Response):
         statistic_tag(TAGS_LABEL_SUCCESS, res)
 
         if len(res.others) == 2:
-            diff = (res.others[0].response_time - res.others[1].response_time) / res.others[0].response_time
-            summary.duration_diff.append(diff)
-            if diff < -2:
+            summary.duration_diff.append(res.diff_time)
+            if res.diff_time < -2:
                 statistic_tag(TAGS_LABEL_DIFF_200, res)
-            elif diff < -0.2:
+            elif res.diff_time < -0.2:
                 statistic_tag(TAGS_LABEL_DIFF_20, res)
 
         return
@@ -195,7 +202,7 @@ def collect(bt: str):
 
     if len(summary.duration_diff) != 0:
         cats = pd.cut(summary.duration_diff, PERFORMANCE_RANGE, right=False)
-        print(pd.value_counts(cats))
+        compare_result_writer.insert_text("SUMMARY", str(pd.value_counts(cats)))
 
 
 if __name__ == '__main__':

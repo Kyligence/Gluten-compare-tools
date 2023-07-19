@@ -1,7 +1,6 @@
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List
 
 import requests
 
@@ -99,5 +98,5 @@ class KE(object):
 
         return res
 
-    def to_readable(self) -> List[str]:
+    def to_readable(self) -> str:
         return self.project + "|" + self.statement

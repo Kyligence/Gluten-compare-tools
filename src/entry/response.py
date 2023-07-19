@@ -47,11 +47,12 @@ class Response(CsvFormat):
         self.results: list = []
         self.others: List[StandardResult] = []
         self.exception: bool = False
+        self.diff_time: float = 0
 
     def to_csv_format(self):
         return [self.project, self.source_message, json.dumps(self.schema, cls=SchemaEncoder), json.dumps(self.results),
                 json.dumps(self.others, cls=StandardResultEncoder),
-                self.exception]
+                self.exception, self.diff_time]
 
     def from_csv_format(self, row: list):
         self.project = row[0]
@@ -64,6 +65,12 @@ class Response(CsvFormat):
             self.exception = True
         else:
             self.exception = False
+
+            if len(self.others) == 2 and self.others[0].response_time is not None \
+                    and self.others[0].response_time != 0 \
+                    and self.others[1].response_time is not None:
+                self.diff_time = (self.others[0].response_time - self.others[1].response_time) \
+                                 / self.others[0].response_time
 
 
 class GoreplayReceive(CsvFormat):
