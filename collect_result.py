@@ -45,7 +45,7 @@ def statistic_tag(tag: str, res: Response):
         replay.message = res.source_message
         backup.insert(tag, replay)
 
-        if tag == TAGS_LABEL_DIFF_20 or tag == TAGS_LABEL_DIFF_200:
+        if tag == TAGS_LABEL_DIFF_200:
             tt: list = []
 
             for o in res.others:
