@@ -23,10 +23,7 @@ if __name__ == '__main__':
 
     def read_to_curl(value: CsvFormat):
         ke = KE(value.to_redis_format())
-
-        curls = ke.to_readable()
-        for c in curls:
-            print(c)
+        print(ke.to_readable() + "\n")
 
 
     reader = CsvReader(csv_config["backup"] + os.sep + batch)
