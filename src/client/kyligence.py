@@ -1,6 +1,7 @@
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import List
 
 import requests
 
@@ -97,3 +98,22 @@ class KE(object):
             res.others.append(other)
 
         return res
+
+    def to_curl(self) -> List[str]:
+
+        urls = ke_config["urls"]
+        curls: list = []
+        for url in urls:
+            curls.append(
+                """
+                    curl -X POST '{}' \
+                    -H 'Accept: application/vnd.apache.kylin-v4-public+json' \
+                    -H 'Accept-Language: cn' \
+                    -H 'Authorization: {}' \
+                    -H 'Content-Type: application/json;charset=utf-8' \
+                    --data-raw $'{}' 
+                """.format(url, ke_config["Authorization"],
+                           "{\"sql\": \"" + self.statement.replace("\"",
+                                                                   "\\'") + "\", \"project\": \"" + self.project + "\"}"))
+
+        return curls
