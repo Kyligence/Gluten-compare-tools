@@ -13,10 +13,14 @@ class StandardResult(object):
         else:
             self.response_time = dic.get("response_time")
 
-        if dic.get("exception") is not None:
+        if dic.get("exception") is None:
+            self.exception = ""
+        else:
             self.exception = dic.get("exception")
 
-        if dic.get("stacktrace") is not None:
+        if dic.get("stacktrace") is None:
+            self.stacktrace = ""
+        else:
             self.stacktrace = dic.get("stacktrace")
 
         if dic.get("fallback") is not None:
