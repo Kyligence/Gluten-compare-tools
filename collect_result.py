@@ -6,7 +6,7 @@ import pandas as pd
 
 import src.compare.compare as compare
 from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TAGS_LABEL_SUCCESS, \
-    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20
+    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20, TAGS_LABEL_DIFF_200
 from config import csv_config, tags
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
@@ -147,7 +147,9 @@ def do_summary(res: Response):
         if len(res.others) == 2:
             diff = (res.others[0].response_time - res.others[1].response_time) / res.others[0].response_time
             summary.duration_diff.append(diff)
-            if diff < -0.2:
+            if diff < -2:
+                statistic_tag(TAGS_LABEL_DIFF_200, res)
+            elif diff < -0.2:
                 statistic_tag(TAGS_LABEL_DIFF_20, res)
 
         return
