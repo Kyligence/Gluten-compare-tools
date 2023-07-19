@@ -7,23 +7,25 @@ from src.entry.types import Schema, SchemaEncoder
 
 
 class StandardResult(object):
-    response_time = -1
-    exception = ""
-    stacktrace = ""
-    fallback = False
-
     def __init__(self, dic: dict):
-        if dic.get("response_time") is not None:
+        if dic.get("response_time") is None:
+            self.response_time = 0
+        else:
             self.response_time = dic.get("response_time")
+
         if dic.get("exception") is not None:
             self.exception = dic.get("exception")
+
         if dic.get("stacktrace") is not None:
             self.stacktrace = dic.get("stacktrace")
+
         if dic.get("fallback") is not None:
             if str(dic.get("fallback")).lower() == "true":
                 self.fallback = True
             else:
                 self.fallback = False
+        else:
+            self.fallback = False
 
 
 class StandardResultEncoder(JSONEncoder):
@@ -32,12 +34,6 @@ class StandardResultEncoder(JSONEncoder):
 
 
 class Response(CsvFormat):
-    project: str
-    source_message: str
-    schema: List[Schema]
-    results: list
-    others: List[StandardResult]
-    exception: bool
 
     def __init__(self):
         super().__init__()

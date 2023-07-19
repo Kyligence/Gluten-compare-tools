@@ -2,8 +2,12 @@ import argparse
 import os
 from typing import List
 
+import pandas as pd
+
 import src.compare.compare as compare
-from config import csv_config, tags, NOT_SAVE_RECORD_SET
+from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TAGS_LABEL_SUCCESS, \
+    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20
+from config import csv_config, tags
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
@@ -35,6 +39,8 @@ def statistic_tag(tag: str, res: Response):
 
     if tag not in NOT_SAVE_RECORD_SET:
         compare_result_writer.insert(tag, res)
+
+    if tag not in NOT_BACKUP_RECORD_SET:
         replay = GoreplayReceive()
         replay.message = res.source_message
         backup.insert(tag, replay)
@@ -48,7 +54,7 @@ def issue_2209(res: Response):
 
 
 def unrecognized(res: Response):
-    statistic_tag("UNRECOGNIZED", res)
+    statistic_tag(TAGS_LABEL_UNRECOGNIZED, res)
     return
 
 
@@ -57,7 +63,7 @@ def query_failed_others(res: Response):
     return
 
 
-def fallback_or_index(res: Response):
+def fallback_or_index(res: Response) -> bool:
     others = res.others
 
     start_index = 1
@@ -71,9 +77,9 @@ def fallback_or_index(res: Response):
             break
 
     if fallback:
-        statistic_tag("FALLBACK", res)
+        statistic_tag(TAGS_LABEL_FALLBACK, res)
 
-    return
+    return fallback
 
 
 def do_exception(others: List[StandardResult], res: Response):
@@ -122,14 +128,28 @@ def do_summary(res: Response):
     (result, is_replace) = compare.is_consistent(res.results[0], res.results[1], res.exception, res.schema)
 
     if result and not is_replace:
+        fallback: bool = fallback_or_index(res)
+
         for i in range(0, len(res.others)):
-            while len(summary.duration) <= i:
-                summary.duration.append(0)
+            if fallback:
+                while len(summary.fallback_duration) <= i:
+                    summary.fallback_duration.append(0)
 
-            summary.duration[i] = summary.duration[i] + res.others[i].response_time
+                summary.fallback_duration[i] = summary.fallback_duration[i] + res.others[i].response_time
+            else:
+                while len(summary.duration) <= i:
+                    summary.duration.append(0)
 
-        statistic_tag("SUCCESS", res)
-        fallback_or_index(res)
+                summary.duration[i] = summary.duration[i] + res.others[i].response_time
+
+        statistic_tag(TAGS_LABEL_SUCCESS, res)
+
+        if len(res.others) == 2:
+            diff = (res.others[0].response_time - res.others[1].response_time) / res.others[0].response_time
+            summary.duration_diff.append(diff)
+            if diff < -0.2:
+                statistic_tag(TAGS_LABEL_DIFF_20, res)
+
         return
 
     if result and is_replace:
@@ -170,6 +190,10 @@ def collect(bt: str):
 
     for key in summary.group.keys():
         compare_result_writer.insert_text("SUMMARY", "{}: {}".format(key, summary.group.get(key).total))
+
+    if len(summary.duration_diff) != 0:
+        cats = pd.cut(summary.duration_diff, PERFORMANCE_RANGE, right=False)
+        print(pd.value_counts(cats))
 
 
 if __name__ == '__main__':

@@ -32,11 +32,10 @@ class KECompareItem(object):
 
 
 class KECompareResultSummary(object):
-    total: int
-    duration: List[int]
-    group: Dict[str, KECompareItem]
 
     def __init__(self):
         self.total: int = 0
         self.duration: List[int] = []
+        self.fallback_duration: List[int] = []
+        self.duration_diff: List = []
         self.group: Dict[str, KECompareItem] = {}
