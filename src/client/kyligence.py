@@ -97,3 +97,6 @@ class KE(object):
             res.others.append(other)
 
         return res
+
+    def to_readable(self) -> str:
+        return self.project + "|" + self.statement

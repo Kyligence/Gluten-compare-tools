@@ -7,23 +7,29 @@ from src.entry.types import Schema, SchemaEncoder
 
 
 class StandardResult(object):
-    response_time = -1
-    exception = ""
-    stacktrace = ""
-    fallback = False
-
     def __init__(self, dic: dict):
-        if dic.get("response_time") is not None:
+        if dic.get("response_time") is None:
+            self.response_time = 0
+        else:
             self.response_time = dic.get("response_time")
-        if dic.get("exception") is not None:
+
+        if dic.get("exception") is None:
+            self.exception = ""
+        else:
             self.exception = dic.get("exception")
-        if dic.get("stacktrace") is not None:
+
+        if dic.get("stacktrace") is None:
+            self.stacktrace = ""
+        else:
             self.stacktrace = dic.get("stacktrace")
+
         if dic.get("fallback") is not None:
             if str(dic.get("fallback")).lower() == "true":
                 self.fallback = True
             else:
                 self.fallback = False
+        else:
+            self.fallback = False
 
 
 class StandardResultEncoder(JSONEncoder):
@@ -32,12 +38,6 @@ class StandardResultEncoder(JSONEncoder):
 
 
 class Response(CsvFormat):
-    project: str
-    source_message: str
-    schema: List[Schema]
-    results: list
-    others: List[StandardResult]
-    exception: bool
 
     def __init__(self):
         super().__init__()
@@ -47,11 +47,12 @@ class Response(CsvFormat):
         self.results: list = []
         self.others: List[StandardResult] = []
         self.exception: bool = False
+        self.diff_time: float = 0
 
     def to_csv_format(self):
         return [self.project, self.source_message, json.dumps(self.schema, cls=SchemaEncoder), json.dumps(self.results),
                 json.dumps(self.others, cls=StandardResultEncoder),
-                self.exception]
+                self.exception, self.diff_time]
 
     def from_csv_format(self, row: list):
         self.project = row[0]
@@ -64,6 +65,12 @@ class Response(CsvFormat):
             self.exception = True
         else:
             self.exception = False
+
+            if len(self.others) == 2 and self.others[0].response_time is not None \
+                    and self.others[0].response_time != 0 \
+                    and self.others[1].response_time is not None:
+                self.diff_time = (self.others[0].response_time - self.others[1].response_time) \
+                                 / self.others[0].response_time
 
 
 class GoreplayReceive(CsvFormat):
