@@ -55,6 +55,8 @@ if __name__ == '__main__':
     import os
 
     # os.system("locust -f locust_pt.py --host=http://127.0.0.1:7070")
-    os.system("locust -f locust_pt.py --headless -u 20 -r 5 -t 20s --host=http://127.0.0.1:7070 --csv=example")
+    os.system(
+        "locust -f locust_pt.py --headless -u 20 -r 5 -t 20s --host=http://127.0.0.1:7070 --csv=pt_results/2023-07-19/example"
+    )
 
 
