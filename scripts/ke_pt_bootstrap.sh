@@ -68,7 +68,6 @@ echo "Starting KE"
 sleep 300
 
 ## Begin locust pt
-cd ..
 echo "$(date '+%F %T'): Begin locust pt for ke with gluten ${ke_with_gluten_addr}"
 sh ./scripts/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
 echo "$(date '+%F %T'): End locust pt for ke with gluten"
