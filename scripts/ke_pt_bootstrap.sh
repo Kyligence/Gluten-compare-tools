@@ -36,7 +36,7 @@ pip3 install -r "${base_dir}"/../requirements.txt
 cd "${base_dir}" || return
 
 ## Start Env
-manager_instance start "$COMPARE_INSTANCE_IDS"
+#manager_instance start "$COMPARE_INSTANCE_IDS"
 
 ## Replace jars
 latest_gluten="$tmp_dir"/latest_gluten.tar.gz
@@ -62,16 +62,17 @@ scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}
 scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/extraJars/spark32/spark32-shims.jar "${COMPARE_USER}"@"${COMPARE_KE_WORKER}":/opt/spark/jars/spark32-shims.jar
 
 ## restart ke
-echo "Start KE"
-ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl restart kylin"
-echo "Starting KE"
-sleep 300
+#echo "Start KE"
+#ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl restart kylin"
+#echo "Starting KE"
+#sleep 300
 
+pwd
 ## Begin locust pt
 echo "$(date '+%F %T'): Begin locust pt for ke with gluten ${ke_with_gluten_addr}"
-sh ./scripts/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh "${base_dir}"/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
 echo "$(date '+%F %T'): End locust pt for ke with gluten"
 
 echo "$(date '+%F %T'): Begin locust pt for ke without gluten ${ke_without_gluten_addr}"
-sh ./scripts/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh "${base_dir}"/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
 echo "$(date '+%F %T'): End locust pt for ke without gluten"
