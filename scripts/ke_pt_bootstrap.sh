@@ -68,11 +68,12 @@ scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}
 #sleep 300
 
 pwd
+cd ..
 ## Begin locust pt
 echo "$(date '+%F %T'): Begin locust pt for ke with gluten ${ke_with_gluten_addr}"
-sh "${base_dir}"/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh ./scripts/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
 echo "$(date '+%F %T'): End locust pt for ke with gluten"
 
 echo "$(date '+%F %T'): Begin locust pt for ke without gluten ${ke_without_gluten_addr}"
-sh "${base_dir}"/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh ./scripts/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
 echo "$(date '+%F %T'): End locust pt for ke without gluten"
