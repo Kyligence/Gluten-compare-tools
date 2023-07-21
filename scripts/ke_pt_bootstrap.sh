@@ -8,6 +8,7 @@ start_con=$6
 end_con=$7
 con_step=$8
 
+
 # shellcheck disable=SC2046
 # shellcheck disable=SC2164
 # shellcheck disable=SC2006
@@ -24,6 +25,10 @@ source "${base_dir}"/common/aws-instance.sh
 s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-amzn2023-x86_64.tar.gz
 ## update compare code
 cd "${base_dir}"/.. || return
+
+dt_f=$(date +%F)
+mkdir -p pt_results/${dt_f}
+rm -rf pt_results/${dt_f}/*
 
 sudo git stash
 sudo git fetch origin
@@ -69,11 +74,14 @@ sleep 300
 
 pwd
 cd ..
+echo "ke_with_gluten, start_con:${start_con}, end_con:${end_con}, current_con:${start_con}" > pt_results/${dt_f}/ke_with_gluten_progress
+echo "ke_without_gluten, start_con:${start_con}, end_con:${end_con}, current_con:${start_con}" > pt_results/${dt_f}/ke_without_gluten_progress
+
 ## Begin locust pt
 echo "$(date '+%F %T'): Begin locust pt for ke with gluten ${ke_with_gluten_addr}"
-sh ./scripts/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh ./scripts/ke_pt.sh ${ke_with_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step} $(pwd)/pt_results/${dt_f}/ke_with_gluten_progress
 echo "$(date '+%F %T'): End locust pt for ke with gluten"
 
 echo "$(date '+%F %T'): Begin locust pt for ke without gluten ${ke_without_gluten_addr}"
-sh ./scripts/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step}
+sh ./scripts/ke_pt.sh ${ke_without_gluten_addr} ${single_point_test_duration} ${continuous_test_duration} ${start_con} ${end_con} ${con_step} $(pwd)/pt_results/${dt_f}/ke_without_gluten_progress
 echo "$(date '+%F %T'): End locust pt for ke without gluten"
