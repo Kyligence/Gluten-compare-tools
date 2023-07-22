@@ -8,7 +8,7 @@ import pandas as pd
 
 import src.compare.compare as compare
 from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TagsLabel
-from config import csv_config, tags
+from config import csv_config, tags, tags_recognized
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
@@ -64,6 +64,11 @@ def issue_2209(res: Response):
 
 
 def unrecognized(res: Response):
+    for t in tags_recognized.items():
+        if res.source_message.find(t[0]) != -1:
+            statistic_tag(t[1], res)
+            return
+
     statistic_tag(TagsLabel.unrecognized, res)
 
     sm = json.loads(res.source_message)

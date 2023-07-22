@@ -38,6 +38,10 @@ ke_config = {
     ]  # The 1st is base line, and others is compare line.
 }
 
+tags_recognized: (str, str) = {
+
+}
+
 
 class _TagsLabel(object):
     @property
@@ -83,6 +87,9 @@ NOT_SAVE_RECORD_SET: set = {
     TagsLabel.not_found, TagsLabel.sql_error, TagsLabel.diff_duration_20, TagsLabel.diff_duration_200,
     TagsLabel.diff_time
 }
+
+for t in tags_recognized.items():
+    NOT_SAVE_RECORD_SET.add(t[1])
 
 NOT_BACKUP_RECORD_SET: set = {
     TagsLabel.not_found, TagsLabel.sql_error
