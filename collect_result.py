@@ -1,5 +1,7 @@
 import argparse
+import json
 import os
+import re
 from typing import List
 
 import pandas as pd
@@ -63,6 +65,18 @@ def issue_2209(res: Response):
 
 def unrecognized(res: Response):
     statistic_tag(TAGS_LABEL_UNRECOGNIZED, res)
+
+    sm = json.loads(res.source_message)
+    item: KECompareItem = summary.group.get(TAGS_LABEL_UNRECOGNIZED)
+
+    stm: str = re.sub("/\*\+(.)+\*/", "", sm["sql"])
+
+    if stm.startswith("SELECT   * FROM ("):
+        stm = stm[17: -20]
+
+    if item.distinct_query.get(stm) is None:
+        item.distinct_query[stm] = res.results
+
     return
 
 
@@ -198,11 +212,22 @@ def collect(bt: str):
     compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
 
     for key in summary.group.keys():
-        compare_result_writer.insert_text("SUMMARY", "{}: {}".format(key, summary.group.get(key).total))
+        compare_result_writer.insert_text("SUMMARY", "{}: {},".format(key, summary.group.get(key).total))
 
     if len(summary.duration_diff) != 0:
         cats = pd.cut(summary.duration_diff, PERFORMANCE_RANGE, right=False)
         compare_result_writer.insert_text("SUMMARY", str(pd.value_counts(cats)))
+
+    if summary.group.get(TAGS_LABEL_UNRECOGNIZED) is not None:
+        ung = summary.group.get(TAGS_LABEL_UNRECOGNIZED)
+        compare_result_writer.insert_text("SUMMARY", "")
+
+        compare_result_writer.insert_text("SUMMARY", "{}: distinct count {},".format(TAGS_LABEL_UNRECOGNIZED,
+                                                                                     len(ung.distinct_query.items())))
+        for k in ung.distinct_query.keys():
+            compare_result_writer.insert_text("SUMMARY", k)
+            compare_result_writer.insert_text("SUMMARY", str(ung.distinct_query[k]))
+            compare_result_writer.insert_text("SUMMARY", "")
 
 
 if __name__ == '__main__':

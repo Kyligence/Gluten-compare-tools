@@ -29,6 +29,7 @@ class KECompareItem(object):
     def __init__(self):
         self.total: int = 0
         self.details: List[Response] = []
+        self.distinct_query: Dict[str, list] = {}
 
 
 class KECompareResultSummary(object):
