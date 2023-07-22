@@ -68,3 +68,9 @@ sleep 300
 echo "Begin compare"
 python3 "${base_dir}"/../begin_compare.py --process 10 --date "$dt" --batch "$task_id" --mod "$mod"
 echo "End compare"
+
+## stop ke
+echo "Stop KE"
+ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl stop kylin"
+echo "Stopping KE"
+sleep 300

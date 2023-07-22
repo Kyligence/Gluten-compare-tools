@@ -38,28 +38,61 @@ ke_config = {
     ]  # The 1st is base line, and others is compare line.
 }
 
-TAGS_LABEL_NOT_FOUND = "NOT_FOUND"
-TAGS_LABEL_SQL_ERROR = "SQL_ERROR"
-TAGS_LABEL_SUCCESS = "SUCCESS"
-TAGS_LABEL_UNRECOGNIZED = "UNRECOGNIZED"
-TAGS_LABEL_FALLBACK = "FALLBACK"
-TAGS_LABEL_DIFF_20 = "DIFF_DURATION_20"
-TAGS_LABEL_DIFF_200 = "DIFF_DURATION_200"
-TAGS_LABEL_DIFF_TIME = "DIFF_DURATION_TIME"
+
+class _TagsLabel(object):
+    @property
+    def not_found(self):
+        return 'NOT_FOUND'
+
+    @property
+    def sql_error(self):
+        return 'SQL_ERROR'
+
+    @property
+    def success(self):
+        return 'SUCCESS'
+
+    @property
+    def unrecognized(self):
+        return 'UNRECOGNIZED'
+
+    @property
+    def fallback(self):
+        return 'FALLBACK'
+
+    @property
+    def diff_duration_20(self):
+        return 'DIFF_DURATION_20'
+
+    @property
+    def diff_duration_200(self):
+        return 'DIFF_DURATION_200'
+
+    @property
+    def diff_time(self):
+        return 'DIFF_TIME'
+
+    @property
+    def unstable(self):
+        return 'UNSTABLE'
+
+
+TagsLabel = _TagsLabel()
 
 NOT_SAVE_RECORD_SET: set = {
-    TAGS_LABEL_NOT_FOUND, TAGS_LABEL_SQL_ERROR, TAGS_LABEL_DIFF_20, TAGS_LABEL_DIFF_200, TAGS_LABEL_DIFF_TIME
+    TagsLabel.not_found, TagsLabel.sql_error, TagsLabel.diff_duration_20, TagsLabel.diff_duration_200,
+    TagsLabel.diff_time
 }
 
 NOT_BACKUP_RECORD_SET: set = {
-    TAGS_LABEL_NOT_FOUND, TAGS_LABEL_SQL_ERROR
+    TagsLabel.not_found, TagsLabel.sql_error
 }
 
 tags: (str, str) = {
-    "find project": TAGS_LABEL_NOT_FOUND,
-    "not found": TAGS_LABEL_NOT_FOUND,
-    "Illegal use of": TAGS_LABEL_SQL_ERROR,
-    "Was expecting one of": TAGS_LABEL_SQL_ERROR,
+    "find project": TagsLabel.not_found,
+    "not found": TagsLabel.not_found,
+    "Illegal use of": TagsLabel.sql_error,
+    "Was expecting one of": TagsLabel.sql_error,
     "OBJECT STORAGE Exception": "S3_ERROR"
 }
 

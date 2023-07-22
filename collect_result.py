@@ -7,13 +7,13 @@ from typing import List
 import pandas as pd
 
 import src.compare.compare as compare
-from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TAGS_LABEL_SUCCESS, \
-    TAGS_LABEL_UNRECOGNIZED, TAGS_LABEL_FALLBACK, TAGS_LABEL_DIFF_20, TAGS_LABEL_DIFF_200, TAGS_LABEL_DIFF_TIME
+from config import NOT_SAVE_RECORD_SET, PERFORMANCE_RANGE, NOT_BACKUP_RECORD_SET, TagsLabel
 from config import csv_config, tags
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
 from src.entry.response import Response, StandardResult, GoreplayReceive
+from src.rule import KERule
 
 # TODO index统计
 
@@ -47,13 +47,13 @@ def statistic_tag(tag: str, res: Response):
         replay.message = res.source_message
         backup.insert(tag, replay)
 
-        if tag == TAGS_LABEL_DIFF_200:
+        if tag == TagsLabel.diff_duration_200:
             tt: list = []
 
             for o in res.others:
                 tt.append(o.response_time)
 
-            backup.insert_text(TAGS_LABEL_DIFF_TIME, str(tt))
+            backup.insert_text(TagsLabel.diff_time, str(tt))
 
     return
 
@@ -64,10 +64,10 @@ def issue_2209(res: Response):
 
 
 def unrecognized(res: Response):
-    statistic_tag(TAGS_LABEL_UNRECOGNIZED, res)
+    statistic_tag(TagsLabel.unrecognized, res)
 
     sm = json.loads(res.source_message)
-    item: KECompareItem = summary.group.get(TAGS_LABEL_UNRECOGNIZED)
+    item: KECompareItem = summary.group.get(TagsLabel.unrecognized)
 
     stm: str = re.sub("/\*\+(.)+\*/", "", sm["sql"])
 
@@ -99,7 +99,7 @@ def fallback_or_index(res: Response) -> bool:
             break
 
     if fallback:
-        statistic_tag(TAGS_LABEL_FALLBACK, res)
+        statistic_tag(TagsLabel.fallback, res)
 
     return fallback
 
@@ -164,14 +164,14 @@ def do_summary(res: Response):
 
                 summary.duration[i] = summary.duration[i] + res.others[i].response_time
 
-        statistic_tag(TAGS_LABEL_SUCCESS, res)
+        statistic_tag(TagsLabel.success, res)
 
         if len(res.others) == 2:
             summary.duration_diff.append(res.diff_time)
             if res.diff_time < -2:
-                statistic_tag(TAGS_LABEL_DIFF_200, res)
+                statistic_tag(TagsLabel.diff_duration_200, res)
             elif res.diff_time < -0.2:
-                statistic_tag(TAGS_LABEL_DIFF_20, res)
+                statistic_tag(TagsLabel.diff_duration_20, res)
 
         return
 
@@ -183,9 +183,9 @@ def do_summary(res: Response):
         do_exception(res.others, res)
         return
 
-    if compare.quick_consistent([res.results[0], res.results[1]], res.exception,
-                                res.schema) and res.source_message.find(" limit ") != -1:
-        statistic_tag("LIMIT", res)
+    if compare.quick_consistent([res.results[0], res.results[1]], res.exception, res.schema) \
+            and res.results[0] is not None and not KERule.is_stable_statement(res.source_message):
+        statistic_tag(TagsLabel.unstable, res)
         return
 
     unrecognized(res)
@@ -218,11 +218,11 @@ def collect(bt: str):
         cats = pd.cut(summary.duration_diff, PERFORMANCE_RANGE, right=False)
         compare_result_writer.insert_text("SUMMARY", str(pd.value_counts(cats)))
 
-    if summary.group.get(TAGS_LABEL_UNRECOGNIZED) is not None:
-        ung = summary.group.get(TAGS_LABEL_UNRECOGNIZED)
+    if summary.group.get(TagsLabel.unrecognized) is not None:
+        ung = summary.group.get(TagsLabel.unrecognized)
         compare_result_writer.insert_text("SUMMARY", "")
 
-        compare_result_writer.insert_text("SUMMARY", "{}: distinct count {},".format(TAGS_LABEL_UNRECOGNIZED,
+        compare_result_writer.insert_text("SUMMARY", "{}: distinct count {},".format(TagsLabel.unrecognized,
                                                                                      len(ung.distinct_query.items())))
         for k in ung.distinct_query.keys():
             compare_result_writer.insert_text("SUMMARY", k)

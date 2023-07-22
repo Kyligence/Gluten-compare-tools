@@ -2,7 +2,7 @@ def to_string(rows):
     return str([str(x) for x in rows])
 
 
-def compare_str(str1, str2):
+def compare_str(str1, str2) -> bool:
     if str1 == str2:
         return True
 
