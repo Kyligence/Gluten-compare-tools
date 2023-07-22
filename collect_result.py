@@ -13,7 +13,7 @@ from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
 from src.entry.response import Response, StandardResult, GoreplayReceive
-from src.rule import KERule
+from src.rule import SqlRule
 
 # TODO index统计
 
@@ -184,7 +184,7 @@ def do_summary(res: Response):
         return
 
     if compare.quick_consistent([res.results[0], res.results[1]], res.exception, res.schema) \
-            and res.results[0] is not None and not KERule.is_stable_statement(res.source_message):
+            and res.results[0] is not None and not SqlRule.is_stable_statement(res.source_message):
         statistic_tag(TagsLabel.unstable, res)
         return
 
