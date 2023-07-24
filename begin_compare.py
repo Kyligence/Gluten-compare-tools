@@ -1,5 +1,6 @@
 import argparse
 import os
+import shutil
 import sys
 import time
 from multiprocessing import Pool
@@ -92,6 +93,32 @@ def prepare_redis_data(batch_name: str, dt: str, m: str) -> bool:
         return reader.read_to_other(dt, result, read_to_redis)
 
 
+def clean_history_dirs(dirs: str, cur: int):
+    reader = CsvReader(dirs)
+
+    files = []
+    for file in os.listdir(reader.file_dir):
+        if os.path.isdir(reader.file_dir + os.sep + file):
+            files.append(int(file))
+
+    files.sort()
+
+    if len(files) < 10:
+        return
+
+    for index in range(0, len(files) - 10 + 1):
+        if cur != files[index]:
+            log.info("Clean history dirs %d", files[index])
+            shutil.rmtree(reader.file_dir + os.sep + str(files[index]))
+
+
+def clean_history(bt: str):
+    current = int(bt)
+    clean_history_dirs(csv_config["server_result"], current)
+    clean_history_dirs(csv_config["compare_result"], current)
+    clean_history_dirs(csv_config["backup"], current)
+
+
 if __name__ == '__main__':
     args = vars(parser.parse_args())
     process_num = args["process"]
@@ -105,6 +132,7 @@ if __name__ == '__main__':
     if process_num >= 20:
         process_num = 20
 
+    clean_history(batch)
     if not prepare_redis_data(batch, date, mod):
         log.error("Prepare data failed.")
         sys.exit(-1)
