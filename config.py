@@ -69,8 +69,8 @@ class _TagsLabel(object):
         return 'DIFF_DURATION_20'
 
     @property
-    def diff_duration_200(self):
-        return 'DIFF_DURATION_200'
+    def diff_duration_100(self):
+        return 'DIFF_DURATION_100'
 
     @property
     def diff_time(self):
@@ -84,7 +84,7 @@ class _TagsLabel(object):
 TagsLabel = _TagsLabel()
 
 NOT_SAVE_RECORD_SET: set = {
-    TagsLabel.not_found, TagsLabel.sql_error, TagsLabel.diff_duration_20, TagsLabel.diff_duration_200,
+    TagsLabel.not_found, TagsLabel.sql_error, TagsLabel.diff_duration_20, TagsLabel.diff_duration_100,
     TagsLabel.diff_time
 }
 

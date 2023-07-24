@@ -39,4 +39,5 @@ class KECompareResultSummary(object):
         self.duration: List[int] = []
         self.fallback_duration: List[int] = []
         self.duration_diff: List = []
+        self.spark_job_duration: List[int] = []
         self.group: Dict[str, KECompareItem] = {}

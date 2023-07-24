@@ -47,13 +47,15 @@ def statistic_tag(tag: str, res: Response):
         replay.message = res.source_message
         backup.insert(tag, replay)
 
-        if tag == TagsLabel.diff_duration_200:
-            tt: list = []
+        if tag == TagsLabel.diff_duration_100:
+            dt_total: list = []
+            dt_detail: list = []
 
             for o in res.others:
-                tt.append(o.response_time)
+                dt_total.append(o.response_time)
+                dt_detail.append(o.time_trace)
 
-            backup.insert_text(TagsLabel.diff_time, str(tt))
+            backup.insert_text(TagsLabel.diff_time, str(dt_total) + str(dt_detail))
 
     return
 
@@ -169,12 +171,16 @@ def do_summary(res: Response):
 
                 summary.duration[i] = summary.duration[i] + res.others[i].response_time
 
+                while len(summary.spark_job_duration) <= i:
+                    summary.spark_job_duration.append(0)
+                summary.spark_job_duration[i] = summary.spark_job_duration[i] + res.others[i].spark_job_time
+
         statistic_tag(TagsLabel.success, res)
 
         if len(res.others) == 2:
             summary.duration_diff.append(res.diff_time)
-            if res.diff_time < -2:
-                statistic_tag(TagsLabel.diff_duration_200, res)
+            if res.diff_time < -1:
+                statistic_tag(TagsLabel.diff_duration_100, res)
             elif res.diff_time < -0.2:
                 statistic_tag(TagsLabel.diff_duration_20, res)
 

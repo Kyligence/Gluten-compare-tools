@@ -31,6 +31,16 @@ class StandardResult(object):
         else:
             self.fallback = False
 
+        if dic.get("time_trace") is None:
+            self.time_trace = []
+        else:
+            self.time_trace = dic.get("time_trace")
+
+        if dic.get("spark_job_time") is None:
+            self.spark_job_time = 0
+        else:
+            self.spark_job_time = dic.get("spark_job_time")
+
 
 class StandardResultEncoder(JSONEncoder):
     def default(self, o):

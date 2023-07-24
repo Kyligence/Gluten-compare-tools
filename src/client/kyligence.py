@@ -43,21 +43,20 @@ class KE(object):
         self.source_message = source_message
         js = json.loads(self.source_message)
         self.statement = re.sub("/\*\+(.)+\*/", "", js['sql'])
+        self.limit = js['limit']
         self.project = js['project']
         self.header = {"Accept": "application/vnd.apache.kylin-v4+json", "Authorization": ke_config["Authorization"],
                        "Connection": "keep-alive"}
 
     def query(self) -> Response:
-        source_message_prepared: json = {"sql": self.statement, "project": self.project}
+        source_message_prepared: json = {"sql": self.statement, "project": self.project, "limit": self.limit}
 
         urls = ke_config["urls"]
         future_list = []
         for i in range(0, len(urls)):
             future_list.append(self.pool.submit(do_request, i, urls[i], source_message_prepared, self.header))
 
-            # def send(self, urls, source_message_prepared, addition):
         results = []
-
         for future in as_completed(future_list):
             results.append(future.result())
 
@@ -76,8 +75,15 @@ class KE(object):
 
             if result["code"] == "000":
                 data: dict = result["data"]
-                if data.get("exceptionMessage") is None or data.get("exceptionMessage") == "":
+                if data.get("exceptionMessage") is None and data.get("exceptionMessage") == "":
                     other.response_time = data["duration"]
+                    other.time_trace = data["traces"]
+                    if other.time_trace is not None:
+                        for trace in other.time_trace:
+                            if trace["name"] == "SPARK_JOB_EXECUTION":
+                                other.spark_job_time = trace["duration"]
+                                break
+
                     if data.get("glutenFallback") is not None:
                         other.fallback = data.get("glutenFallback")
 
