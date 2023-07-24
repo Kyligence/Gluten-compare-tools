@@ -12,7 +12,7 @@ from config import csv_config, tags, tags_recognized
 from src.compare.result import KECompareResultSummary, KECompareItem
 from src.database.reader import CsvReader
 from src.database.writer import CsvWriter, clean_dirs
-from src.entry.response import Response, StandardResult, GoreplayReceive
+from src.entry.response import Response, StandardResult, GoreplayReceive, StandardResultEncoder
 from src.rule import SqlRule
 
 # TODO index统计
@@ -55,7 +55,8 @@ def statistic_tag(tag: str, res: Response):
                 dt_total.append(o.response_time)
                 dt_detail.append(o.time_trace)
 
-            backup.insert_text(TagsLabel.diff_time, str(dt_total) + str(json.dumps(dt_detail)))
+            backup.insert_text(TagsLabel.diff_time,
+                               str(dt_total) + str(json.dumps(dt_detail, cls=StandardResultEncoder)))
 
     return
 
