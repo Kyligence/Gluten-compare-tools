@@ -75,7 +75,7 @@ class KE(object):
 
             if result["code"] == "000":
                 data: dict = result["data"]
-                if data.get("exceptionMessage") is None and data.get("exceptionMessage") == "":
+                if data.get("exceptionMessage") is None or data.get("exceptionMessage") == "":
                     other.response_time = data["duration"]
                     other.time_trace = data["traces"]
                     if other.time_trace is not None:
