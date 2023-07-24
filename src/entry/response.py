@@ -6,6 +6,14 @@ from src.entry.csv_format import CsvFormat
 from src.entry.types import Schema, SchemaEncoder
 
 
+def json_list_to_standard_result(srs: List[dict]):
+    arr = []
+    for sr in srs:
+        arr.append(StandardResult(sr))
+
+    return arr
+
+
 class StandardResult(object):
     def __init__(self, dic: dict):
         if dic.get("response_time") is None:
@@ -69,7 +77,7 @@ class Response(CsvFormat):
         self.source_message = row[1]
         self.schema = json.loads(row[2], object_hook=Schema)
         self.results = json.loads(row[3])
-        self.others = json.loads(row[4], object_hook=StandardResult)
+        self.others = json_list_to_standard_result(json.loads(row[4]))
 
         if row[5] == "True":
             self.exception = True
