@@ -55,7 +55,7 @@ def statistic_tag(tag: str, res: Response):
                 dt_total.append(o.response_time)
                 dt_detail.append(o.time_trace)
 
-            backup.insert_text(TagsLabel.diff_time, str(dt_total) + str(dt_detail))
+            backup.insert_text(TagsLabel.diff_time, str(dt_total) + str(json.dumps(dt_detail)))
 
     return
 
@@ -221,6 +221,7 @@ def collect(bt: str):
 
     compare_result_writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
     compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
+    compare_result_writer.insert_text("SUMMARY", "Job_Duration: {}".format(summary.spark_job_duration))
 
     for key in summary.group.keys():
         compare_result_writer.insert_text("SUMMARY", "{}: {},".format(key, summary.group.get(key).total))
