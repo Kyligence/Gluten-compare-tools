@@ -93,7 +93,7 @@ def prepare_redis_data(batch_name: str, dt: str, m: str) -> bool:
         return reader.read_to_other(dt, result, read_to_redis)
 
 
-def clean_history_dirs(dirs: str, cur: int, dt: str):
+def clean_history_dirs(dirs: str, cur: int, dt: str, md: str):
     reader = CsvReader(dirs)
 
     files = []
@@ -107,16 +107,18 @@ def clean_history_dirs(dirs: str, cur: int, dt: str):
         return
 
     for index in range(0, len(files) - 10 + 1):
-        if cur != files[index] and int(dt) != files[index]:
-            log.info("Clean history dirs %d", files[index])
-            shutil.rmtree(reader.file_dir + os.sep + str(files[index]))
+        if cur == files[index] or (md == "error" and int(dt) == files[index]):
+            continue
+
+        log.info("Clean history dirs %d", files[index])
+        shutil.rmtree(reader.file_dir + os.sep + str(files[index]))
 
 
-def clean_history(bt: str, dt: str):
+def clean_history(bt: str, dt: str, md: str):
     current = int(bt)
-    clean_history_dirs(csv_config["server_result"], current, dt)
-    clean_history_dirs(csv_config["compare_result"], current, dt)
-    clean_history_dirs(csv_config["backup"], current, dt)
+    clean_history_dirs(csv_config["server_result"], current, dt, md)
+    clean_history_dirs(csv_config["compare_result"], current, dt, md)
+    clean_history_dirs(csv_config["backup"], current, dt, md)
 
 
 if __name__ == '__main__':
@@ -132,7 +134,7 @@ if __name__ == '__main__':
     if process_num >= 20:
         process_num = 20
 
-    clean_history(batch, date)
+    clean_history(batch, date, mod)
     if not prepare_redis_data(batch, date, mod):
         log.error("Prepare data failed.")
         sys.exit(-1)
