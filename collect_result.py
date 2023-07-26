@@ -200,6 +200,12 @@ def do_summary(res: Response):
         statistic_tag(TagsLabel.unstable, res)
         return
 
+    if compare.quick_consistent([res.results[0], res.results[1]], res.exception, res.schema) \
+            and res.results[0] is not None and len(res.results[0]) == 500 \
+            and SqlRule.is_stable_statement(res.source_message):
+        statistic_tag("UNSTABLE500", res)
+        return
+
     unrecognized(res)
 
 
