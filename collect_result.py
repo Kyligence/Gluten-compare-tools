@@ -260,7 +260,14 @@ def collect(bt: str):
             reader.read_to_other(file, Response(), do_summary)
 
     compare_result_writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
-    compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
+
+    if len(summary.duration) < 2:
+        compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
+    else:
+        compare_result_writer.insert_text("SUMMARY", "Duration: {}, {}, DIFF: {:.4f}"
+                                          .format(summary.duration[0],
+                                                  summary.duration[1],
+                                                  summary.duration[0] / summary.duration[1]))
 
     print_time_trace()
 
