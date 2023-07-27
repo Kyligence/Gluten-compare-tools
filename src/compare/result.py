@@ -32,6 +32,12 @@ class KECompareItem(object):
         self.distinct_query: Dict[str, list] = {}
 
 
+class PrintTimeTrace(object):
+    def __init__(self):
+        self.times_total: List[dict] = []
+        self.diff_100: List[dict] = []
+
+
 class KECompareResultSummary(object):
 
     def __init__(self):
@@ -39,5 +45,5 @@ class KECompareResultSummary(object):
         self.duration: List[int] = []
         self.fallback_duration: List[int] = []
         self.duration_diff: List = []
-        self.spark_job_duration: List[int] = []
+        self.time_trace: List[dict] = []
         self.group: Dict[str, KECompareItem] = {}

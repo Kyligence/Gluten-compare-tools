@@ -172,9 +172,14 @@ def do_summary(res: Response):
 
                 summary.duration[i] = summary.duration[i] + res.others[i].response_time
 
-                while len(summary.spark_job_duration) <= i:
-                    summary.spark_job_duration.append(0)
-                summary.spark_job_duration[i] = summary.spark_job_duration[i] + res.others[i].spark_job_time
+                while len(summary.time_trace) <= i:
+                    summary.time_trace.append({})
+
+                for d in res.others[i].time_trace:
+                    if d.get("name") not in summary.time_trace[i]:
+                        summary.time_trace[i][d.get("name")] = 0
+
+                    summary.time_trace[i][d.get("name")] = summary.time_trace[i][d.get("name")] + d.get("duration")
 
         statistic_tag(TagsLabel.success, res)
 
@@ -214,6 +219,34 @@ def pre_collect(bt: str):
     clean_dirs(csv_config["backup"] + os.sep + bt)
 
 
+def print_time_trace():
+    if len(summary.time_trace) < 2:
+        return
+
+    keys: set[str] = set()
+
+    for trace in summary.time_trace:
+        for key in trace.keys():
+            keys.add(key)
+
+    for key in keys:
+        t1 = 1
+        t2 = 1
+        if key in summary.time_trace[0]:
+            t1 = summary.time_trace[0][key]
+
+        if key in summary.time_trace[1]:
+            t2 = summary.time_trace[1][key]
+
+        compare_result_writer.insert_text("SUMMARY", "{}: {}, {}, AVG: {:.4f}, {:.4f}, DIFF: {:.4f}"
+                                          .format(key,
+                                                  t1,
+                                                  t2,
+                                                  t1 / summary.group.get(TagsLabel.success).total,
+                                                  t2 / summary.group.get(TagsLabel.success).total,
+                                                  t1 / t2))
+
+
 def collect(bt: str):
     pre_collect(bt)
     global compare_result_writer, backup
@@ -228,7 +261,8 @@ def collect(bt: str):
 
     compare_result_writer.insert_text("SUMMARY", "Total: {}".format(summary.total))
     compare_result_writer.insert_text("SUMMARY", "Duration: {}".format(summary.duration))
-    compare_result_writer.insert_text("SUMMARY", "Job_Duration: {}".format(summary.spark_job_duration))
+
+    print_time_trace()
 
     for key in summary.group.keys():
         compare_result_writer.insert_text("SUMMARY", "{}: {},".format(key, summary.group.get(key).total))
