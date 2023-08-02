@@ -238,6 +238,9 @@ def print_time_trace():
         if key in summary.time_trace[1]:
             t2 = summary.time_trace[1][key]
 
+        if t2 == 0:
+            t2 = 1
+
         compare_result_writer.insert_text("SUMMARY", "{}: {}, {}, AVG: {:.4f}, {:.4f}, DIFF: {:.4f}"
                                           .format(key,
                                                   t1,

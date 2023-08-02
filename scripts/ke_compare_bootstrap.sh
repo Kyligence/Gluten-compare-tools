@@ -66,7 +66,7 @@ sleep 300
 
 ## Begin compare with double run
 echo "Begin compare"
-python3 "${base_dir}"/../begin_compare.py --process 1 --date "$dt" --batch "$task_id" --mod "$mod"
+python3 "${base_dir}"/../begin_compare.py --process 3 --date "$dt" --batch "$task_id" --mod "$mod"
 echo "End compare"
 
 ## stop ke
