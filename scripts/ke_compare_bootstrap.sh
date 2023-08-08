@@ -4,6 +4,7 @@ task_id=$1
 package_version=$2
 dt=$3
 mod=$4
+p_cnt=$5
 
 # shellcheck disable=SC2046
 # shellcheck disable=SC2164
@@ -66,7 +67,7 @@ sleep 300
 
 ## Begin compare with double run
 echo "Begin compare"
-python3 "${base_dir}"/../begin_compare.py --process 3 --date "$dt" --batch "$task_id" --mod "$mod"
+python3 "${base_dir}"/../begin_compare.py --process "$p_cnt" --date "$dt" --batch "$task_id" --mod "$mod"
 echo "End compare"
 
 ## stop ke
