@@ -40,9 +40,9 @@ class StandardResult(object):
             self.fallback = False
 
         if dic.get("time_trace") is None:
-            self.time_trace = []
+            self.time_trace: list[dict] = []
         else:
-            self.time_trace = dic.get("time_trace")
+            self.time_trace: list[dict] = dic.get("time_trace")
 
         if dic.get("spark_job_time") is None:
             self.spark_job_time = 0
