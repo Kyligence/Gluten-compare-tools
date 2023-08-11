@@ -26,8 +26,8 @@ dt_ft=$(date +%F_%T)
 mkdir -p pt_results/${dt_f}
 
 for((i=${start_con};i<${end_con};i+=${con_step}));do
-  echo "$(date '+%F %T'): single point pt:locust -f locust_pt.py --headless -u ${i} -r ${i} -t ${single_point_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/sp_${dt_ft}_${i}"
-  locust -f locust_pt.py --headless -u ${i} -r ${i} -t ${single_point_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/sp_${dt_ft}_${i}
+  echo "$(date '+%F %T'): single point pt:locust -f locust_pt.py --headless -u ${i} -r 50 -t ${single_point_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/sp_${dt_ft}_${i}"
+  locust -f locust_pt.py --headless -u ${i} -r 50 -t ${single_point_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/sp_${dt_ft}_${i}
   echo "ke_with_gluten, start_con:${start_con}, end_con:${end_con}, current_con:${i}" > ${progress_file}
 done
 
@@ -50,9 +50,9 @@ echo "top_rps: ${top_rps},  concurrency_number: ${concurrency_number}" | tee -a 
 echo ""
 if [ ${continuous_test_duration} -ne 0 ];then
   echo "$(date '+%F %T'): use the concurrency that made the most submit rps to do continuous stress test"
-  echo "$(date '+%F %T'): locust -f locust_pt.py --headless -u ${concurrency_number} -r ${concurrency_number} -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}"
+  echo "$(date '+%F %T'): locust -f locust_pt.py --headless -u ${concurrency_number} -r 50 -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}"
   echo "ke_with_gluten continuous test begin" >> ${progress_file}
-  locust -f locust_pt.py --headless -u ${concurrency_number} -r ${concurrency_number} -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}
+  locust -f locust_pt.py --headless -u ${concurrency_number} -r 50 -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}
   echo "ke_with_gluten continuous test end" >> ${progress_file}
   echo "$(date '+%F %T'): pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}_exceptions.csv:"
   cat pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}_exceptions.csv
