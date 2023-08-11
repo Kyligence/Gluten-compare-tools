@@ -51,9 +51,9 @@ echo ""
 if [ ${continuous_test_duration} -ne 0 ];then
   echo "$(date '+%F %T'): use the concurrency that made the most submit rps to do continuous stress test"
   echo "$(date '+%F %T'): locust -f locust_pt.py --headless -u ${concurrency_number} -r 50 -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}"
-  echo "ke_with_gluten continuous test begin" >> ${progress_file}
+  echo "ke continuous test begin" >> ${progress_file}
   locust -f locust_pt.py --headless -u ${concurrency_number} -r 50 -t ${continuous_test_duration}s --host=${ke_addr} --csv=pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}
-  echo "ke_with_gluten continuous test end" >> ${progress_file}
+  echo "ke continuous test end" >> ${progress_file}
   echo "$(date '+%F %T'): pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}_exceptions.csv:"
   cat pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}_exceptions.csv
   echo "$(date '+%F %T'): pt_results/${dt_f}/c_${dt_ft}_${concurrency_number}_failures.csv:"
