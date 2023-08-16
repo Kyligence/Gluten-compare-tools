@@ -15,3 +15,5 @@ cd ..
 dt_f=$(date +%F)
 cat /opt/zen-compare/Gluten-compare-tools/pt_results/${dt_f}/ke_with_gluten_progress
 cat /opt/zen-compare/Gluten-compare-tools/pt_results/${dt_f}/ke_without_gluten_progress
+
+exit 0
