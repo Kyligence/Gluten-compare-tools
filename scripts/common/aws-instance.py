@@ -1,13 +1,11 @@
+import argparse
+import logging
 import sys
 import time
 
-sys.path.append("..")
-sys.path.append("../..")
-
-import argparse
 import boto3
 
-from config import log
+log = logging.getLogger()
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--operator', type=str,
@@ -58,7 +56,7 @@ def start_instance(instances: list):
     starting_instances: list = response.get("StartingInstances")
 
     if starting_instances is None or len(starting_instances) != len(instances):
-        log.err("Start failed")
+        log.error("Start failed")
         sys.exit(-1)
 
     return check_instance_status(instances, "running")
@@ -75,7 +73,7 @@ def stop_instance(instances: list):
     stop_instances: list = response.get("StoppingInstances")
 
     if stop_instances is None or len(stop_instances) != len(instances):
-        log.err("Stop failed")
+        log.error("Stop failed")
         sys.exit(-1)
 
     return check_instance_status(instances, "stopped")
