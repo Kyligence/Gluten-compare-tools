@@ -1,6 +1,7 @@
 import sys
 import time
 
+sys.path.append("..")
 sys.path.append("../..")
 
 import argparse
