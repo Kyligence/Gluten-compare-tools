@@ -16,7 +16,6 @@ base_dir=$(
 tmp_dir=${base_dir}/tmp
 mkdir -p "$tmp_dir"
 
-export BASE_DIR_ENV="$base_dir"
 source "${base_dir}"/ke_env.sh
 source "${base_dir}"/common/aws-instance.sh
 

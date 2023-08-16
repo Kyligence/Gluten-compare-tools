@@ -1,5 +1,10 @@
 #！/bin/sh
 
+base_dir=$(
+  cd $(dirname "$0")
+  pwd
+)
+
 function manager_instance() {
   op=$1
   instance_ids=$2
@@ -17,10 +22,10 @@ function manager_instance() {
 
     if [ "$op" == "start" ]; then
       echo "do start ${instance_id}"
-      python3 "$BASE_DIR_ENV"/scripts/common/aws-instance.py --instance-ids "${instance_id}" --operator start
+      python3 "$base_dir"/aws-instance.py --instance-ids "${instance_id}" --operator start
     elif [ "$op" == "stop" ]; then
       echo "do stop ${instance_id}"
-      python3 "$BASE_DIR_ENV"/scripts/common/aws-instance.py --instance-ids "${instance_id}" --operator stop
+      python3 "$base_dir"/aws-instance.py --instance-ids "${instance_id}" --operator stop
     else
       echo "$(date '+%F %T'): Not support $op"
       exit 110
