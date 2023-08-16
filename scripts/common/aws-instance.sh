@@ -22,10 +22,10 @@ function manager_instance() {
 
     if [ "$op" == "start" ]; then
       echo "do start ${instance_id}"
-      python3 "$base_dir"/aws-instance.py --instance-ids "${instance_id}" --operator start
+      python3 "$base_dir"/common/aws-instance.py --instance-ids "${instance_id}" --operator start
     elif [ "$op" == "stop" ]; then
       echo "do stop ${instance_id}"
-      python3 "$base_dir"/aws-instance.py --instance-ids "${instance_id}" --operator stop
+      python3 "$base_dir"/common/aws-instance.py --instance-ids "${instance_id}" --operator stop
     else
       echo "$(date '+%F %T'): Not support $op"
       exit 110
