@@ -17,10 +17,10 @@ function manager_instance() {
 
     if [ "$op" == "start" ]; then
       echo "do start ${instance_id}"
-      aws ec2 start-instances --instance-ids "${instance_id}"
+      python3 aws-instance.py --instance-ids "${instance_id}" --operator start
     elif [ "$op" == "stop" ]; then
       echo "do stop ${instance_id}"
-      aws ec2 stop-instances --instance-ids "${instance_id}"
+      python3 aws-instance.py --instance-ids "${instance_id}" --operator stop
     else
       echo "$(date '+%F %T'): Not support $op"
       exit 110
@@ -34,7 +34,4 @@ function manager_instance() {
   done
 
   IFS="${OLD_IFS}"
-  echo "Wait for ec2 $op..."
-  echo "See you 60s latter..."
-  sleep 60
 }

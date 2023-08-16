@@ -34,7 +34,7 @@ def check_instance_status(instances: list, st: str) -> bool:
             statuses = res.get("InstanceStatuses")
             if statuses is not None and len(statuses) != 0 and statuses[0]["InstanceState"]["Name"] != st:
                 need_checks_new.append(need_checks[i])
-                log.info("{} status is {}".format(str(need_checks[i]), st))
+                log.info("{} status is {}".format(str(need_checks[i]), statuses[0]["InstanceState"]["Name"]))
 
         time_second = time_second - 10
         time.sleep(10)
