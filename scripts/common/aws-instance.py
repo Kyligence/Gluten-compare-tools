@@ -1,4 +1,5 @@
 import sys
+import time
 
 sys.path.append("../..")
 
@@ -25,7 +26,8 @@ def check_instance_status(instances: list, st: str) -> bool:
         for i in range(0, len(need_checks)):
             res: dict = client.describe_instance_status(
                 InstanceIds=[need_checks[i]],
-                DryRun=False
+                DryRun=False,
+                IncludeAllInstances=True
             )
             log.info(str(res))
 
@@ -35,6 +37,7 @@ def check_instance_status(instances: list, st: str) -> bool:
                 log.info("{} status is {}".format(str(need_checks[i]), st))
 
         time_second = time_second - 10
+        time.sleep(10)
         need_checks = need_checks_new
 
     if len(need_checks) > 0:
