@@ -37,7 +37,7 @@ class KETaskSet(TaskSet):
 
 class MyLocust(FastHttpUser):
     tasks = [KETaskSet]
-    wait_time = between(1, 60)
+    wait_time = between(1, 2)
 
 
 def add_row_to_arr(value: CsvFormat):
