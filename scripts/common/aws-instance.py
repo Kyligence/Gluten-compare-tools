@@ -1,9 +1,11 @@
 import argparse
+import logging
 import sys
+import time
 
 import boto3
 
-from config import log
+log = logging.getLogger()
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--operator', type=str,
@@ -18,21 +20,24 @@ def check_instance_status(instances: list, st: str) -> bool:
     need_checks = instances
     time_second = 900  # 15 minutes
     while len(need_checks) > 0 and time_second >= 0:
+        log.info("{} is in {}".format(str(need_checks), st))
         need_checks_new = []
         for i in range(0, len(need_checks)):
             res: dict = client.describe_instance_status(
-                InstanceIds=need_checks[i],
-                DryRun=False
+                InstanceIds=[need_checks[i]],
+                DryRun=False,
+                IncludeAllInstances=True
             )
             log.info(str(res))
 
             statuses = res.get("InstanceStatuses")
-            if statuses is not None and statuses[0]["InstanceState"]["Name"] != st:
+            if statuses is not None and len(statuses) != 0 and statuses[0]["InstanceState"]["Name"] != st:
                 need_checks_new.append(need_checks[i])
+                log.info("{} status is {}".format(str(need_checks[i]), statuses[0]["InstanceState"]["Name"]))
 
         time_second = time_second - 10
+        time.sleep(10)
         need_checks = need_checks_new
-        log.info("{} is in {}".format(str(need_checks), st))
 
     if len(need_checks) > 0:
         return False
@@ -51,7 +56,7 @@ def start_instance(instances: list):
     starting_instances: list = response.get("StartingInstances")
 
     if starting_instances is None or len(starting_instances) != len(instances):
-        log.err("Start failed")
+        log.error("Start failed")
         sys.exit(-1)
 
     return check_instance_status(instances, "running")
@@ -68,7 +73,7 @@ def stop_instance(instances: list):
     stop_instances: list = response.get("StoppingInstances")
 
     if stop_instances is None or len(stop_instances) != len(instances):
-        log.err("Stop failed")
+        log.error("Stop failed")
         sys.exit(-1)
 
     return check_instance_status(instances, "stopped")
