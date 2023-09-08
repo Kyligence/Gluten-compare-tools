@@ -18,3 +18,5 @@ ps aux | grep begin_compare.py | grep -v grep | awk '{print $2}' | xargs kill -9
 
 # Don't close instance
 #manager_instance stop "$COMPARE_INSTANCE_IDS"
+
+exit 0
