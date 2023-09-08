@@ -29,6 +29,7 @@ def sub_process(process_number: int):
 
         if source_message is None:
             time.sleep(1)
+            continue
 
         if source_message == "":
             time.sleep(1)
