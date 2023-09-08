@@ -39,12 +39,12 @@ def sub_process(process_number: int, batch_name: str):
         log.info('Stop child process %s (%s)...' % (str(process_number), os.getpid()))
         return
 
-    clean_dirs(csv_config["server_result"] + os.sep + batch)
+    clean_dirs(csv_config["server_result"] + os.sep + batch_name)
 
-    csv_writer = CsvWriter(csv_config["server_result"] + os.sep + batch)
+    csv_writer = CsvWriter(csv_config["server_result"] + os.sep + batch_name)
 
     while True:
-        source_message = r.read_goreplay(redis_config["key_name"])
+        source_message = r.read_goreplay(redis_config["daily"])
 
         if source_message is None:
             log.info('Stop child process %s (%s)...' % (str(process_number), os.getpid()))
@@ -62,7 +62,7 @@ def prepare_redis_data(batch_name: str, dt: str, m: str) -> bool:
     r = RedisReader()
     # clean batch
     while True:
-        source_message = r.read_goreplay(redis_config["key_name"])
+        source_message = r.read_goreplay(redis_config["daily"])
         if source_message is None:
             break
 
@@ -73,7 +73,7 @@ def prepare_redis_data(batch_name: str, dt: str, m: str) -> bool:
     w = RedisWriter()
 
     def read_to_redis(value: CsvFormat):
-        w.insert_goreplay(redis_config["key_name"], value.to_redis_format())
+        w.insert_goreplay(redis_config["daily"], value.to_redis_format())
 
     if m == "error":
         reader = CsvReader(csv_config["backup"] + os.sep + dt)

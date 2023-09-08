@@ -7,7 +7,8 @@ logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT, datefmt=DATE_FORMAT)
 log = logging.getLogger()
 
 redis_config = {
-    "key_name": "query"
+    "daily": "daily",
+    "long_running": "long_running"
 }
 
 csv_config = {
@@ -18,6 +19,7 @@ csv_config = {
     'backup': "backup",
     'pt_source_parent_dir': "pt_source_parent_dir",
     'pt_source_file': "pt_source_file",
+    'long_running_result': "long_running_result",
 }
 
 mysql_config = {

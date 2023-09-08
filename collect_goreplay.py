@@ -4,9 +4,9 @@ from datetime import date
 
 from flask import Flask, request
 
-from config import csv_config
+from config import csv_config, redis_config
 from core.common import config
-from src.database.writer import CsvWriter
+from src.database.writer import CsvWriter, RedisWriter
 from src.entry.response import GoreplayReceive
 
 app = Flask(__name__)
@@ -19,6 +19,18 @@ def endpoint():
 
 
 def dispatch(message: str):
+    save_to_redis(message)
+    save_to_daily_file(message)
+
+
+def save_to_redis(message: str):
+    w = RedisWriter()
+    if not w.ready():
+        return
+    w.insert_goreplay(redis_config["long_running"], message)
+
+
+def save_to_daily_file(message: str):
     writer = CsvWriter(csv_config["goreplay_data_dir_name"] + os.sep)
 
     if not writer.ready():
