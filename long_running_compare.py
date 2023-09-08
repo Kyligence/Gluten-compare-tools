@@ -24,8 +24,6 @@ def sub_process(process_number: int):
         log.info('Stop child process %s (%s)...' % (str(process_number), os.getpid()))
         return
 
-    csv_writer = CsvWriter(csv_config["long_running_result"])
-
     while True:
         source_message = r.read_goreplay(redis_config["long_running"])
 
@@ -36,9 +34,10 @@ def sub_process(process_number: int):
             time.sleep(1)
             continue
 
+        csv_writer = CsvWriter(csv_config["long_running_result"] + os.sep + str(date.today()))
         log.info('Child process %s (%s) consumer message.' % (str(process_number), os.getpid()))
         ke = KE(source_message)
-        csv_writer.insert(str(date.today()) + str(process_number), ke.query())
+        csv_writer.insert(str(process_number), ke.query())
 
 
 if __name__ == '__main__':
