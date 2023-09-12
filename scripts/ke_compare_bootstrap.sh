@@ -19,22 +19,22 @@ mkdir -p "$tmp_dir"
 source "${base_dir}"/ke_env.sh
 source "${base_dir}"/common/aws-instance.sh
 
-s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-amzn2023-x86_64.tar.gz
+#s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-amzn2023-x86_64.tar.gz
 ## update compare code
-#cd "${base_dir}"/.. || return
-#
-#sudo git stash
-#sudo git fetch origin
-#sudo git checkout origin/main
-#sudo git stash pop
-#
+cd "${base_dir}"/.. || return
+
+sudo git stash
+sudo git fetch origin
+sudo git checkout origin/main
+sudo git stash pop
+
 ### install python requirements.txt
-#pip3 install -r "${base_dir}"/../requirements.txt
-#
-#cd "${base_dir}" || return
+pip3 install -r "${base_dir}"/../requirements.txt
+
+cd "${base_dir}" || return
 
 ## Start Env
-#manager_instance start "$COMPARE_INSTANCE_IDS"
+manager_instance start "$COMPARE_INSTANCE_IDS"
 
 ## Replace jars
 #latest_gluten="$tmp_dir"/latest_gluten.tar.gz
@@ -62,8 +62,8 @@ s3_package="${S3_PACKAGE_PRE}"/"${package_version}"/gluten-"${package_version}"-
 ## restart ke
 #echo "Start KE"
 #ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl restart kylin"
-#echo "Starting KE"
-#sleep 300
+echo "Starting KE"
+sleep 300
 
 ## Begin compare with double run
 echo "Begin compare"
