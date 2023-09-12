@@ -16,6 +16,10 @@ parser.add_argument('--process', type=int,
                     default=10)
 
 
+def is_has_compare_process() -> bool:
+    return int(os.popen("ps -ef|grep begin_compare.py|grep -v grep|wc -l").read()) > 0
+
+
 def sub_process(process_number: int):
     log.info('Run child process %s (%s)...' % (str(process_number), os.getpid()))
     r = RedisReader()
@@ -25,6 +29,11 @@ def sub_process(process_number: int):
         return
 
     while True:
+        if is_has_compare_process():
+            log.info('Child process %s (%s) wait for begin_compare process..' % (str(process_number), os.getpid()))
+            time.sleep(600)
+            continue
+
         source_message = r.read_goreplay(redis_config["long_running"])
 
         if source_message is None:
