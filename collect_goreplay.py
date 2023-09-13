@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 from datetime import date
@@ -9,7 +10,18 @@ from core.common import config
 from src.database.writer import CsvWriter, RedisWriter
 from src.entry.response import GoreplayReceive
 
+parser = argparse.ArgumentParser(description='command line arguments')
+parser.add_argument('--daily', type=bool,
+                    help='Save to daily dirs.', required=False,
+                    default=True)
+parser.add_argument('--long-running', type=bool,
+                    help='Save to long running redis key', required=False,
+                    default=True)
+
 app = Flask(__name__)
+
+daily = True
+long_running = True
 
 
 @app.route(config.FORWARD_PATH, methods=['POST'])
@@ -19,11 +31,14 @@ def endpoint():
 
 
 def dispatch(message: str):
-    save_to_redis(message)
-    save_to_daily_file(message)
+    if long_running:
+        save_long_running(message)
+
+    if long_running:
+        save_to_daily_file(message)
 
 
-def save_to_redis(message: str):
+def save_long_running(message: str):
     w = RedisWriter()
     if not w.ready():
         return
@@ -43,4 +58,7 @@ def save_to_daily_file(message: str):
 
 
 if __name__ == '__main__':
+    args = vars(parser.parse_args())
+    daily = args["daily"]
+    long_running = args["long_running"]
     app.run(host='0.0.0.0', debug=True, threaded=True)
