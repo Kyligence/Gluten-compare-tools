@@ -20,8 +20,9 @@ parser.add_argument('--long-running', type=bool,
 
 app = Flask(__name__)
 
-daily = True
-long_running = True
+args = vars(parser.parse_args())
+daily = args["daily"]
+long_running = args["long_running"]
 
 
 @app.route(config.FORWARD_PATH, methods=['POST'])
@@ -58,7 +59,4 @@ def save_to_daily_file(message: str):
 
 
 if __name__ == '__main__':
-    args = vars(parser.parse_args())
-    daily = args["daily"]
-    long_running = args["long_running"]
-    app.run(host='0.0.0.0', debug=True, threaded=True)
+    app.run(host='0.0.0.0', debug=False, threaded=True)
