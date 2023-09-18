@@ -52,12 +52,12 @@ scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}
 
 ### update gluten.jar
 echo "Update gluten.jar"
-scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/jars/gluten.jar "${COMPARE_USER}"@"${COMPARE_KE_SERVER}":/opt/kyligence/engine/spark/jars/gluten.jar
+scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/jars/gluten.jar "${COMPARE_USER}"@"${COMPARE_KE_SERVER}":/opt/kyligence/engine/server/jars/gluten.jar
 scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/jars/gluten.jar "${COMPARE_USER}"@"${COMPARE_KE_WORKER}":/opt/spark/jars/gluten.jar
 ### update shims.jar
 echo "Update shims.jar"
-scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/extraJars/spark33/spark33-shims.jar "${COMPARE_USER}"@"${COMPARE_KE_SERVER}":/opt/kyligence/engine/spark/jars/spark32-shims.jar
-scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/extraJars/spark33/spark33-shims.jar "${COMPARE_USER}"@"${COMPARE_KE_WORKER}":/opt/spark/jars/spark32-shims.jar
+scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/extraJars/spark33/spark33-shims.jar "${COMPARE_USER}"@"${COMPARE_KE_SERVER}":/opt/kyligence/engine/server/jars/spark33-shims.jar
+scp -i "${COMPARE_USER_KEY}" "$tmp_dir"/latest_gluten/gluten-"${package_version}"-amzn2023-x86_64/extraJars/spark33/spark33-shims.jar "${COMPARE_USER}"@"${COMPARE_KE_WORKER}":/opt/spark/jars/spark33-shims.jar
 
 ## restart ke
 echo "Start KE"
