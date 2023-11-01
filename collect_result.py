@@ -89,9 +89,27 @@ def unrecognized(res: Response):
 
 
 def query_failed_others(res: Response):
-    for t in tags_recognized.items():
-        if res.source_message.find(t[0]) != -1 or (len(res.others) > 1 and res.others[1].exception.find(t[0]) != -1):
-            statistic_tag(t[1], res)
+    tgs = {0: None, 1: None}
+
+    for t in tags.items():
+        for i in range(0, len(res.others)):
+            other = res.others[i]
+            if other.exception.find(t[0]) != -1:
+                tgs[i] = t[1]
+
+    if len(res.others) > 1:
+        if tgs[0] == tgs[1] and tgs[0] is not None:
+            statistic_tag("BOTH_" + tgs[0], res)
+            return
+        elif tgs[0] == tgs[1] and tgs[0] is None:
+            statistic_tag("ERROR_UNRECOGNIZED", res)
+            return
+        else:
+            if tgs[0] is not None:
+                statistic_tag("0_" + tgs[0], res)
+
+            if tgs[1] is not None:
+                statistic_tag("1_" + tgs[1], res)
             return
 
     statistic_tag("ERROR_UNRECOGNIZED", res)
@@ -124,31 +142,13 @@ def do_exception(others: List[StandardResult], res: Response):
             except_cnt = except_cnt + 1
 
     if except_cnt == len(others):
-        tag: dict = {}
-
-        for other in others:
-            if tag == {}:
-                for t in tags.items():
-                    if other.exception.find(t[0]) != -1:
-                        tag = t
-                        break
-
-                if tag == {}:
-                    query_failed_others(res)
-                    return
-
-            else:
-                if other.exception.find(tag[0]) == -1:
-                    query_failed_others(res)
-                else:
-                    statistic_tag(tag[1], res)
-
-                return
+        query_failed_others(res)
     else:
-        for other in others:
+        for idx in range(0, len(others)):
+            other = others[idx]
             for t in tags.items():
                 if other.exception.find(t[0]) != -1:
-                    statistic_tag(t[1], res)
+                    statistic_tag(str(idx) + "_" + t[1], res)
                     return
 
     if len(others) > 1:

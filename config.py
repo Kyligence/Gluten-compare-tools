@@ -101,8 +101,15 @@ tags: (str, str) = {
     "find project": TagsLabel.not_found,
     "not found": TagsLabel.not_found,
     "Illegal use of": TagsLabel.sql_error,
-    "Was expecting one of": TagsLabel.sql_error,
-    "OBJECT STORAGE Exception": "S3_ERROR"
+    "No such file or directory": "NO_SUCH_FILE_OR_DIRECTORY",
+    "Cannot parse input": "CSV_PARSER",
+    "Not enough spark off-heap execution memory": "OFF_HEAP",
+    "The query exceeds the set time limit of": "TIME_OUT",
+    "Input path does not exist": "NO_SUCH_FILE_OR_DIRECTORY",
+    "ObjectInputStream.readOrdinaryObject": "VERSION_DIFF",
+    "From line ": TagsLabel.sql_error,
+    "AmazonS3Exception: Forbidden (Service: Amazon S3": "S3_AUTH",
+    "Executor heartbeat timed out": "HEARTBEAT_TIMEOUT"
 }
 
 PERFORMANCE_RANGE: list = [-100, -10, -2, -1, -0.5, -0.2, 0, 0.2, 0.5, 1, 2, 10, 100]
