@@ -89,6 +89,11 @@ def unrecognized(res: Response):
 
 
 def query_failed_others(res: Response):
+    for t in tags_recognized.items():
+        if res.source_message.find(t[0]) != -1 or (len(res.others) > 1 and res.others[1].exception.find(t[0]) != -1):
+            statistic_tag(t[1], res)
+            return
+
     statistic_tag("ERROR_UNRECOGNIZED", res)
     return
 
