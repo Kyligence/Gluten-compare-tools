@@ -190,6 +190,8 @@ def do_summary(res: Response):
 
         if len(res.others) == 2:
             summary.duration_diff.append(res.diff_time)
+            if res.diff_time < 0:
+                statistic_tag("DIFF_DURATION_ALL_SLOW", res)
             if res.diff_time < -1:
                 statistic_tag(TagsLabel.diff_duration_100, res)
             elif res.diff_time < -0.2:
