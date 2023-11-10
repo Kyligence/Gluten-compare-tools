@@ -70,6 +70,59 @@ echo "Begin compare"
 python3 "${base_dir}"/../begin_compare.py --process "$p_cnt" --date "$dt" --batch "$task_id" --mod "$mod"
 echo "End compare"
 
+
+
+
+## Backup original csv
+cp -r /opt/zen-compare/goreplay_data/result/"$task_id" /opt/zen-compare/goreplay_data/result/"$task_id"_origin
+cp -r /opt/zen-compare/goreplay_data/backup/"$task_id" /opt/zen-compare/goreplay_data/backup/"$task_id"_origin
+cp -r /opt/zen-compare/goreplay_data/server_result/"$task_id" /opt/zen-compare/goreplay_data/server_result/"$task_id"_origin
+
+## Check all slow queries again and again
+echo "Begin check slow queries the first time"
+mkdir -p /opt/zen-compare/goreplay_data/backup/"$task_id"_1
+cp /opt/zen-compare/goreplay_data/backup/"$task_id"/DIFF_DURATION_ALL_SLOW.csv /opt/zen-compare/goreplay_data/backup/"$task_id"_1/
+python3 "${base_dir}"/../begin_compare.py --process "$p_cnt" --date "$task_id"_1 --batch "$task_id" --mod "error"
+
+## /opt/zen-compare/goreplay_data/result/333/SUMMARY.csv
+echo "" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "result of checking slow queries the first time:" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+cat /opt/zen-compare/goreplay_data/result/"$task_id"/SUMMARY.csv >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "End check slow queries the first time"
+
+## Backup check slow _1 csv
+rm -rf /opt/zen-compare/goreplay_data/backup/"$task_id"_1
+cp -r /opt/zen-compare/goreplay_data/result/"$task_id" /opt/zen-compare/goreplay_data/result/"$task_id"_1
+cp -r /opt/zen-compare/goreplay_data/backup/"$task_id" /opt/zen-compare/goreplay_data/backup/"$task_id"_1
+cp -r /opt/zen-compare/goreplay_data/server_result/"$task_id" /opt/zen-compare/goreplay_data/server_result/"$task_id"_1
+
+
+echo "Begin check slow queries the second time"
+mkdir -p /opt/zen-compare/goreplay_data/backup/"$task_id"_2
+cp /opt/zen-compare/goreplay_data/backup/"$task_id"/DIFF_DURATION_ALL_SLOW.csv /opt/zen-compare/goreplay_data/backup/"$task_id"_2/
+python3 "${base_dir}"/../begin_compare.py --process "$p_cnt" --date "$task_id"_2 --batch "$task_id" --mod "error"
+
+echo "" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "result of checking slow queries the second time:" >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+cat /opt/zen-compare/goreplay_data/result/"$task_id"/SUMMARY.csv >> /opt/zen-compare/goreplay_data/result/"$task_id"_origin/SUMMARY.csv
+echo "End check slow queries the second time"
+
+## Backup check slow _2 csv
+rm -rf /opt/zen-compare/goreplay_data/backup/"$task_id"_2
+cp -r /opt/zen-compare/goreplay_data/result/"$task_id" /opt/zen-compare/goreplay_data/result/"$task_id"_2
+cp -r /opt/zen-compare/goreplay_data/backup/"$task_id" /opt/zen-compare/goreplay_data/backup/"$task_id"_2
+cp -r /opt/zen-compare/goreplay_data/server_result/"$task_id" /opt/zen-compare/goreplay_data/server_result/"$task_id"_2
+
+## restore original csv
+rm -rf /opt/zen-compare/goreplay_data/result/"$task_id"
+cp -r /opt/zen-compare/goreplay_data/result/"$task_id"_origin /opt/zen-compare/goreplay_data/result/"$task_id"
+rm -rf /opt/zen-compare/goreplay_data/backup/"$task_id"
+cp -r /opt/zen-compare/goreplay_data/backup/"$task_id"_origin /opt/zen-compare/goreplay_data/backup/"$task_id"
+rm -rf /opt/zen-compare/goreplay_data/server_result/"$task_id"
+cp -r /opt/zen-compare/goreplay_data/server_result/"$task_id"_origin /opt/zen-compare/goreplay_data/server_result/"$task_id"
+
 ## stop ke
 echo "Stop KE"
 ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl stop kylin"
