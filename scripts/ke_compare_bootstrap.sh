@@ -128,3 +128,11 @@ echo "Stop KE"
 ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl stop kylin"
 echo "Stopping KE"
 sleep 300
+
+## check if today's gor data is OK
+today_gor_data_length=$(ls -l $GOREPLAY_DATA_PATH/goreplay/$(date +"%Y-%m-%d").csv | awk '{print $5}')
+if [ ! ${today_gor_data_length}=='' ] && [ $today_gor_data_length -gt 1000 ];then
+  echo "Good!todays gor data is OK!"
+else
+  exit 100
+fi
