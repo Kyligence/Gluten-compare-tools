@@ -127,8 +127,6 @@ mv /opt/zen-compare/goreplay_data/server_result/"$task_id"0 /opt/zen-compare/gor
 echo "Stop KE"
 ssh -i "${COMPARE_USER_KEY}" "${COMPARE_USER}"@"${COMPARE_KE_SERVER}" "sudo systemctl stop kylin"
 echo "Stopping KE"
-sleep 300
-
 ## check if today's gor data is OK
 today_gor_data_length=$(ls -l $GOREPLAY_DATA_PATH/goreplay/$(date +"%Y-%m-%d").csv | awk '{print $5}')
 if [ ! ${today_gor_data_length}=='' ] && [ $today_gor_data_length -gt 1000 ];then
@@ -136,3 +134,4 @@ if [ ! ${today_gor_data_length}=='' ] && [ $today_gor_data_length -gt 1000 ];the
 else
   exit 100
 fi
+sleep 300
