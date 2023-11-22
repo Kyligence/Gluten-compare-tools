@@ -103,10 +103,10 @@ def clean_history_dirs(dirs: str, cur: int, dt: str, md: str):
 
     files.sort()
 
-    if len(files) < 10:
+    if len(files) < 20:
         return
 
-    for index in range(0, len(files) - 10 + 1):
+    for index in range(0, len(files) - 20 + 1):
         if cur == files[index] or (md == "error" and int(dt) == files[index]):
             continue
 
