@@ -42,7 +42,8 @@ class KE(object):
 
         self.source_message = source_message
         js = json.loads(self.source_message)
-        self.statement = re.sub("/\*\+(.)+\*/", "", js['sql'])
+        # self.statement = re.sub("/\*\+(.)+\*/", "", js['sql'])
+        self.statement = js['sql']
         self.limit = js['limit']
         self.project = js['project']
         self.header = {"Accept": "application/vnd.apache.kylin-v4+json", "Authorization": ke_config["Authorization"],
