@@ -109,7 +109,8 @@ tags: (str, str) = {
     "ObjectInputStream.readOrdinaryObject": "VERSION_DIFF",
     "From line ": TagsLabel.sql_error,
     "AmazonS3Exception: Forbidden (Service: Amazon S3": "S3_AUTH",
-    "Executor heartbeat timed out": "HEARTBEAT_TIMEOUT"
+    "Executor heartbeat timed out": "HEARTBEAT_TIMEOUT",
+    "Failed to get object info: No response body.. HTTP response code: 404": "NO_SUCH_FILE_OR_DIRECTORY"
 }
 
 PERFORMANCE_RANGE: list = [-100, -10, -2, -1, -0.5, -0.2, 0, 0.2, 0.5, 1, 2, 10, 100]

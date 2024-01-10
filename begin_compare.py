@@ -54,6 +54,7 @@ def sub_process(process_number: int, batch_name: str):
             time.sleep(1)
             continue
 
+        log.info('Process %s (%s) consume 1 message.' % (str(process_number), os.getpid()))
         ke = KE(source_message)
         csv_writer.insert(str(process_number), ke.query())
 
